@@ -20,7 +20,8 @@ public class EmployeeController {
 
     //Then, setup all the endpoint REST APIs here
 
-    //1. GET API - Get all the employee list with getAllEmployees() function
+    //1. GET REST API - Get all the employee list from the database using <List> method
+    // Setup a getAllEmployees() function and pass the employeeRepository with the Spring Boot findAll() method
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
