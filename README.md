@@ -1,4 +1,4 @@
-## Spring Boot & Angular 10 Project
+## Spring Boot & Angular 10 Project CRUD
 
  built this project with [Spring](https://spring.io/projects/spring-boot) Boot, JPA, Thymeleaf and MYSQL for backend database.
 
