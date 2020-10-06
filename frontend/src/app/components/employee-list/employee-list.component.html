@@ -1,19 +1,38 @@
-<div class="container">
-  <h2 class="text-info pb-3">{{title}}</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let employee of employees; let i =index">
-        <td>{{employee.firstName}}</td>
-        <td>{{employee.lastName}}</td>
-        <td>{{employee.emailId}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<section class="employee_list">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-info pb-3">{{title}}</h2>
+        <div class="table-responsive-sm">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees; let i =index">
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.emailId}}</td>
+                <td>
+                  <a href="/{{employee.id}}" class="btn btn-info btn-sm"
+                    >Edit</a
+                  >
+                </td>
+                <td>
+                  <a href="/{{employee.id}}" class="btn btn-danger btn-sm"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

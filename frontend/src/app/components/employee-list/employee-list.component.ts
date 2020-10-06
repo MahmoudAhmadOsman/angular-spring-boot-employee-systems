@@ -28,6 +28,12 @@ export class EmployeeListComponent implements OnInit {
         emailId: 'osman.example@gmail.com',
         //imageUrl: 'https://source.unsplash.com/160x90/?user',
       },
+      {
+        id: 3,
+        firstName: 'John',
+        lastName: 'Smith',
+        emailId: 'john-smith@gmail.com',
+      },
     ];
   }
 }
