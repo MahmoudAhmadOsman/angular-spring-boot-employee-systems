@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="text-info pb-3">{{title}}</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let i =index">
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.emailId}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
