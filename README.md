@@ -1,8 +1,12 @@
 ## Spring Boot & Angular 10   CRUD RESTAPI
 
- built this project with [Spring](https://spring.io/projects/spring-boot) Boot, JPA, Thymeleaf and MYSQL for backend database.
-* Spring Boot
-* Angular
+ Built  with [Spring](https://spring.io/projects/spring-boot) Boot, JPA, Thymeleaf and MYSQL for backend database.
+## Technologies Used:
+ 	* Spring Boot
+        * Angular
+        * MYSQL
+        * JPA
+        * Thymeleaf 
 
 ## Clone
 
