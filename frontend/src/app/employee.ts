@@ -1,5 +1,5 @@
 export class Employee {
-  //These should much Employee.java class in Spring Boot
+  //These should matcg the 'Employee.java' class in Spring Boot backend
   id: number;
   firstName: string;
   lastName: string;
