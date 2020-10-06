@@ -2,11 +2,11 @@
 
  Built  with [Spring](https://spring.io/projects/spring-boot) Boot, JPA, Thymeleaf and MYSQL for backend database.
 ## Technologies Used:
- 	* Spring Boot
-        * Angular
-        * MYSQL
-        * JPA
-        * Thymeleaf 
+ * Spring Boot
+ * Angular
+ * MYSQL
+ * JPA
+ * Thymeleaf 
 
 ## Clone
 
