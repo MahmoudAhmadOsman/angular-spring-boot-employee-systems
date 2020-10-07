@@ -1,9 +1,60 @@
-<section class="all_employees">
+<section class="home_courses">
   <div class="container">
+    <div class="d-flex justify-content-between">
+      <div class="text-danger">
+        <h1>{{title}}</h1>
+      </div>
+
+      <div class="text-danger d-none d-sm-block">
+        Total of <i class="text-info">{{courses.length }}</i> Courses
+      </div>
+    </div>
+
+    <hr />
     <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-info">{{title}}</h1>
-        <hr />
+      <div
+        class="col-md-3 col-sm-6"
+        *ngFor="let course of courses; let i =index"
+      >
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="{{course.imageUrl}}"
+            alt="{{course.name}}"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-info">
+              {{course.name}}
+              <small class="badge badge-info"># {{i + 1}}</small>
+            </h5>
+            <p class="card-text">
+              {{course.description}}
+            </p>
+            <hr />
+            <p class="card-text">
+              <b> Price: </b><i>Was</i>
+              <span class="was-price"> ${{course.wasPrice}}</span>
+              &nbsp;
+              <span class="text-success">${{course.price}}</span>
+            </p>
+            <hr />
+            <p class="card-text">
+              <b>In {{course.name}}, </b>
+              <span class="badge badge-danger">{{course.quantity}}</span>
+              courses are avaialable!
+            </p>
+            <hr />
+            <a
+              href="{{course.id}}"
+              class="btn btn-outline-secondary btn-sm mr-2"
+            >
+              VIEW Course Details
+            </a>
+            <a href="{{course.id}}" class="btn btn-outline-success btn-sm">
+              BUY
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import { EmployeeService } from './../../services/employee.service';
 import { Employee } from './../../employee';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,29 +12,17 @@ export class EmployeeListComponent implements OnInit {
   //Import the Employee class
   employees: Employee[];
 
-  constructor() {}
+  //2. Now, @inject the employee.service.ts in this employee-list.component.ts Component
+  constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {
-    this.employees = [
-      {
-        id: 1,
-        firstName: 'John',
-        lastName: 'Doe',
-        emailId: 'johndoe@gmail.com',
-      },
-      {
-        id: 2,
-        firstName: 'Mahmoud',
-        lastName: 'Osman',
-        emailId: 'osman.example@gmail.com',
-        //imageUrl: 'https://source.unsplash.com/160x90/?user',
-      },
-      {
-        id: 3,
-        firstName: 'John',
-        lastName: 'Smith',
-        emailId: 'john-smith@gmail.com',
-      },
-    ];
+    //3.
+    this.getEmployees();
+  }
+  //Define getEmployees method here
+  private getEmployees() {
+    this.employeeService.getEmployeesList().subscribe((data) => {
+      this.employees = data;
+    });
   }
 }

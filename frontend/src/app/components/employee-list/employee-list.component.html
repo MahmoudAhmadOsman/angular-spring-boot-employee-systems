@@ -1,12 +1,13 @@
 <section class="employee_list">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-10">
         <h2 class="text-info pb-3">{{title}}</h2>
         <div class="table-responsive-sm">
           <table class="table table-sm">
             <thead>
               <tr>
+                <th>ID #</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
@@ -15,6 +16,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let employee of employees; let i =index">
+                <td>{{employee.id}}</td>
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.emailId}}</td>
