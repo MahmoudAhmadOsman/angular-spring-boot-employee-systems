@@ -17,7 +17,7 @@ public class Employee {
     private  String emailId;
 
 
-    //3
+    //3 -- Empty constructor
     public Employee() {
     }
 

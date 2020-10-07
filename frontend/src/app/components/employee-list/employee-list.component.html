@@ -11,6 +11,7 @@
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
+                <th></th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -21,14 +22,16 @@
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.emailId}}</td>
                 <td>
-                  <a href="/{{employee.id}}" class="btn btn-info btn-sm"
-                    >Edit</a
+                  <a href="/{{employee.id}}" class="text-info">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit</a
                   >
                 </td>
                 <td>
-                  <a href="/{{employee.id}}" class="btn btn-danger btn-sm"
-                    >Delete</a
-                  >
+                  <a href="/{{employee.id}}" class="text-danger">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    Delete
+                  </a>
                 </td>
               </tr>
             </tbody>
