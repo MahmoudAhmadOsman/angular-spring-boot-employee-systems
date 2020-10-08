@@ -7,7 +7,8 @@ import * as data from './data.json';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  title: string = 'Employee Management System';
+  title: string = 'All Courses';
+
   courses: any = (data as any).default;
   constructor() {}
 

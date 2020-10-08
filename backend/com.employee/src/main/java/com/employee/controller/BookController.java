@@ -2,6 +2,7 @@ package com.employee.controller;
 
 
 import com.employee.modal.Book;
+
 import com.employee.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,6 +25,10 @@ public class BookController {
     public List<Book> getAllBooks(){
         return  bookRepository.findAll();
     }
+
+
+
+
 
 
 }
