@@ -22,13 +22,13 @@ export class CreateEmployeeComponent implements OnInit {
 saveEmployee(){
   this.employeeService.createEmployee(this.employee).subscribe(data =>{
           console.log(data);
+          //this.router.navigate(['/employees']); // Same
           this.goToEmployeeList();// After you insert the data into the database, go to the (['/employees']) page
   }),
   error=> console.log(error);
 }
 
 //After you save, go back to the employee page, but you need to inject router into the contructor()
-
 goToEmployeeList(){
   //Now you can use the router to navigate the path you want using Angular navigate() function
   this.router.navigate(['/employees']);
