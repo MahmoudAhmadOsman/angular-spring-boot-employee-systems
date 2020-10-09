@@ -20,6 +20,7 @@
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
+                <th>View</th>
                 <th></th>
                 <th>Actions</th>
               </tr>
@@ -31,11 +32,19 @@
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.email}}</td>
                 <td>
+                  <a href="/{{employee.id}}" class="text-primary">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    View
+                  </a>
+                </td>
+
+                <td>
                   <a href="/{{employee.id}}" class="text-info">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     Edit</a
                   >
                 </td>
+
                 <td>
                   <a href="/{{employee.id}}" class="text-danger">
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
