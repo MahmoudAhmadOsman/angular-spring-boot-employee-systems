@@ -16,7 +16,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {
-    //3.
+    //3. Define a function & then call it inside ngOnInit()  to organize the code
     this.getEmployees();
   }
   //Define getEmployees method here
