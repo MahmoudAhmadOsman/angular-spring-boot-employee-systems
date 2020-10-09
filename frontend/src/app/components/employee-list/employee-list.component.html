@@ -2,7 +2,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h2 class="text-info pb-3">{{title}}</h2>
+        <div class="employee_list_title">
+          <h2 class="text-info">{{title}}</h2>
+          <span class="text-muted">List of all employees</span>
+          <div class="employee_create_form d-flex-inline float-right">
+            <a href="/create-employee" title="Create New Employee">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
+
         <div class="table-responsive-sm">
           <table class="table table-sm">
             <thead>
