@@ -15,4 +15,15 @@ export class EmployeeService {
   getEmployeesList(): Observable<Employee[]> {
     return this.HttpClient.get<Employee[]>(`${this.baseUrl}`);
   }
+
+//1. Form Processing method
+//           You can also use Observable<any>
+createEmployee(employee: Employee):Observable<Object>{
+  //Use POST method and pass the baseUrl to the POST method
+  return this.HttpClient.post(`${this.baseUrl}`, employee);
+
+//2. @Inject this function into the create-employee.component.ts contructor() function
+}
+
+
 }
