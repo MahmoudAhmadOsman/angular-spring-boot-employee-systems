@@ -3,6 +3,7 @@
     <div class="d-flex justify-content-between">
       <div class="text-danger">
         <h1>{{title}}</h1>
+
         <span class="text-muted">List of available courses</span>
       </div>
 
@@ -25,24 +26,30 @@
           />
           <div class="card-body">
             <h5 class="card-title text-info">
-              {{course.name}}
+              <a href="{{course.id}}"> {{course.name}}</a> &nbsp;
               <small class="badge badge-info"># {{i + 1}}</small>
             </h5>
             <p class="card-text">
               {{course.description}}
             </p>
             <hr />
-            <p class="card-text">
-              <b> Price: </b><i>Was</i>
-              <span class="was-price"> ${{course.wasPrice}}</span>
-              &nbsp;
-              <span class="text-success">${{course.price}}</span>
-            </p>
-            <hr />
+
             <p class="card-text">
               <b>In {{course.name}}, </b>
               <span class="badge badge-danger">{{course.quantity}}</span>
               courses are avaialable!
+            </p>
+            <hr />
+            <p class="card-text text-muted">
+              <b> Price: </b><i>Was</i>
+              <span class="was-price"> ${{course.wasPrice}}</span>
+              &nbsp;
+              <span class="text-price">${{course.price}}</span>
+            </p>
+
+            <p class="card-text text-muted">
+              <b> Auhor: </b>
+              <span class=""> {{course.author}}</span>
             </p>
             <hr />
             <a
