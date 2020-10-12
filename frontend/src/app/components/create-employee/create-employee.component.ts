@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-employee.component.scss'],
 })
 export class CreateEmployeeComponent implements OnInit {
-  title: string = 'Create New Employee';
+  title: string = 'Register New Employee';
 
   // Define a property for new employee to create a new object from the [Employee class]
   employee: Employee = new Employee();
