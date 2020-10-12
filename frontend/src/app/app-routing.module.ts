@@ -1,3 +1,4 @@
+import { ContactComponent } from './components/contact/contact.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { BooksComponent } from './components/books/books.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'employees', component: EmployeeListComponent },
   { path: 'create-employee', component: CreateEmployeeComponent },
   { path: 'books', component: BooksComponent },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'contact', component:ContactComponent },
+   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

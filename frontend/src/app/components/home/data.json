@@ -73,5 +73,16 @@
     "imageUrl": "https://source.unsplash.com/1600x900/?code",
     "quantity": 5
   }
+,{
+    "id": 8,
+    "name": "jQuery",
+    "description": "Sint libero mollitia Sint libero mollitia Sint libero mollitia.",
+    "wasPrice": 55.31,
+    "price": 42.18,
+     "author":"Mahmoud Osman",
+    "rating":4.9,
+    "imageUrl": "https://source.unsplash.com/1600x900/?code",
+    "quantity": 5
+  }
 
 ]

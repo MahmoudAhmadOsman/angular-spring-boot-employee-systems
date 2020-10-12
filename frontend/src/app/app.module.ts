@@ -9,6 +9,9 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BooksComponent } from './components/books/books.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { CreateEmployeeComponent } from './components/create-employee/create-emp
     NavbarComponent,
     BooksComponent,
     CreateEmployeeComponent,
+    ParentComponent,
+    ChildComponent,
+    ContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
