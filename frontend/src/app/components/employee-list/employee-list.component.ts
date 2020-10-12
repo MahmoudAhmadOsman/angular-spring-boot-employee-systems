@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-list.component.scss'],
 })
 export class EmployeeListComponent implements OnInit {
-  title: string = 'Employees Inventory';
+  title: string = 'Employee Inventory';
   //Import the Employee class
   employees: Employee[];
 
