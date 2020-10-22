@@ -12,14 +12,15 @@ export class EmployeeListComponent implements OnInit {
   //Import the Employee class
   employees: Employee[];
 
-  //2. Now, @inject the employee.service.ts in this employee-list.component.ts Component
+  //2. Now, @inject, 'employee.service.ts' in this employee-list.component.ts Component
   constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {
-    //3. Define a function & then call it inside ngOnInit()  to organize the code
+    //3. Define a function & then call it inside ngOnInit()  to organize your code
     this.getEmployees();
   }
-  //Define getEmployees() method  or function here
+  //Define getEmployees() method  or function to get all the employees list, 
+  //and subscribe to to the  EmployeeService class to get the empployee list that stored in the backend
   private getEmployees() {
     this.employeeService.getEmployeesList().subscribe((data) => {
       this.employees = data;

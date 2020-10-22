@@ -81,16 +81,15 @@ public class EmployeeController {
 
 
     //Delete employee using rest api by its id
-    @DeleteMapping("/employees/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
-        Employee employee = employeeRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Employee with this " + id + " does not exist."));
-
-        employeeRepository.delete(employee);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return ResponseEntity.ok(response);
-    }
+//    @DeleteMapping("/employees/{id}")
+//    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
+//        Employee employee = employeeRepository.findById(id)
+//                .orElseThrow(()-> new ResourceNotFoundException("Employee with this " + id + " does not exist."));
+//        employeeRepository.delete(employee);
+//        Map<String, Boolean> response = new HashMap<>();
+//        response.put("deleted", Boolean.TRUE);
+//        return ResponseEntity.ok(response);
+//    }
 
 
 
