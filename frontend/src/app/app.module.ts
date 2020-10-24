@@ -35,6 +35,8 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
+  
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

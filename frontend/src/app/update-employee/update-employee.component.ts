@@ -22,7 +22,7 @@ employee: Employee = new Employee();
     this.employeeService.getEmployeeById(this.id).subscribe(data =>{
       this.employee = data;
     },
-    error => console.log(error));
+    error => console.log( "Unable to get employee by id ", error));
   }
 
 }
