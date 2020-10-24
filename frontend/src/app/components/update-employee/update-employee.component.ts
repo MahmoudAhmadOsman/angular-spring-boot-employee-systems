@@ -13,8 +13,11 @@ export class UpdateEmployeeComponent implements OnInit {
   title: string ="Update Employee";
 //1. @inject EmployeeService 
 //2. Create instantiate new employee object
+// id: number;
+// employee: Employee = new Employee();
+
 id: number;
-employee: Employee = new Employee();
+  employee: Employee = new Employee();
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute) { }
 
 
@@ -25,6 +28,10 @@ employee: Employee = new Employee();
       this.employee = data;
     },
     error => console.log( "Unable to get employee by id ", error));
+
+
+
+    
   }
 
 }
