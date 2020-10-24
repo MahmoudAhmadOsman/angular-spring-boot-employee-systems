@@ -1,0 +1,83 @@
+<section class="create_new_employee">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h1 class="text-primary">{{title}}</h1>
+        <hr />
+
+        <!-- Start of form -->
+        <form #validateForm="ngForm" action="#" method="POST">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Enter first name"
+              #firstName="ngModel"
+              [(ngModel)]="employee.firstName"
+              name="firstName"
+              id="firstName"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+              >First name is required</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Enter last name"
+              #lastName="ngModel"
+              [(ngModel)]="employee.lastName"
+              name="lastName"
+              id="lastName"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+              >Last name is required</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              placeholder="Enter email address"
+              #email="ngModel"
+              [(ngModel)]="employee.email"
+              name="email"
+              id="email"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="email.invalid && (email.dirty || email.touched)"
+              >Email address is required</span
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-outline-success mt-3"
+            [disabled]="!validateForm.valid"
+          >
+            Update
+          </button>
+          <a href="/employees" class="btn btn-outline-danger mt-3 ml-3">
+            Cancel</a
+          >
+          <!-- (click)="successmsg()" -->
+        </form>
+
+        <!-- End of form -->
+      </div>
+    </div>
+  </div>
+</section>

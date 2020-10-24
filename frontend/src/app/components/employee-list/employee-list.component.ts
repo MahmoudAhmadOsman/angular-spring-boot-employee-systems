@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EmployeeService } from './../../services/employee.service';
 import { Employee } from './../../employee';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[];
 
   //2. Now, @inject, 'employee.service.ts' in this employee-list.component.ts Component
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService, private router: Router) {}
 
   ngOnInit(): void {
     //3. Define a function & then call it inside ngOnInit()  to organize your code
@@ -26,4 +27,15 @@ export class EmployeeListComponent implements OnInit {
       this.employees = data;
     });
   }
+
+
+//Epdate Employee function
+updateEmployee(id: number){
+this.router.navigate(['update-employee', id]);
+}
+
+
+
+
+
 }

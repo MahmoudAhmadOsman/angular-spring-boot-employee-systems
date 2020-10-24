@@ -1,3 +1,5 @@
+import {enableProdMode} from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +17,8 @@ import { ChildComponent } from './components/child/child.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';    
-import { ToastrModule } from 'ngx-toastr'; 
+import { ToastrModule } from 'ngx-toastr';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
     ParentComponent,
     ChildComponent,
     ContactComponent,
+    UpdateEmployeeComponent,
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],

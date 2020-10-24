@@ -43,10 +43,14 @@
                 </td>
 
                 <td>
-                  <a href="/employees/{{employee.id}}" class="text-info">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    Edit</a
+                  <a
+                    href="/update-employee/{{employee.id}}"
+                    (click)="updateEmployee(employee.id)"
+                    class="text-info"
                   >
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit
+                  </a>
                 </td>
 
                 <td>

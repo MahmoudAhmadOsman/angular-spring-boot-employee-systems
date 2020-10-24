@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --proxy-config proxy.config.json",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+ 
   "private": true,
   "dependencies": {
     "@angular/animations": "^10.0.14",
@@ -24,6 +25,7 @@
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
+
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.5",
     "@angular/cli": "~10.0.5",

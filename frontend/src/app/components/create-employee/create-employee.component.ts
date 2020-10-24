@@ -51,9 +51,9 @@ goToEmployeeList(){
   ngOnInit(): void {}
 
 //Toaster message
-  successmsg(){  
-    this.toastr.success("New employee registered!",'Success')  
-}
+//   successmsg(){  
+//     this.toastr.success("New employee registered!",'Success')  
+// }
 
 }
 
