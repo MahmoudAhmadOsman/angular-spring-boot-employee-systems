@@ -48,7 +48,8 @@ public class EmployeeController {
         return employeeRepository.save(employee);
     }
 
-   //Get Employee by id rest api by its id
+   //GET: Employee by id rest api by its id
+   @CrossOrigin(origins = "http://localhost:4200")
   @DeleteMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
         Employee employee = employeeRepository.findById(id)
@@ -60,8 +61,9 @@ public class EmployeeController {
 
 
 
-   //Update employee using rest api by its id
+   //UPDATE: employee using rest api by its id
     //Annotate @PutMapping,  add @PathVariable &  @RequestBody
+   //@CrossOrigin(origins = "http://localhost:4200"//Don't use
    @PutMapping("/employees/{id}")
    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails){
        //Retrieve user from the database
@@ -80,7 +82,8 @@ public class EmployeeController {
    }
 
 
-    //Delete employee using rest api by its id
+    //DELETE: employee using rest api by its id
+//    @CrossOrigin("http://localhost:4200")
 //    @DeleteMapping("/employees/{id}")
 //    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
 //        Employee employee = employeeRepository.findById(id)
