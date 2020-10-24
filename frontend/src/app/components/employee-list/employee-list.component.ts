@@ -29,11 +29,15 @@ export class EmployeeListComponent implements OnInit {
   }
 
 
-//Epdate Employee function
+//UPDATE Employee function
 updateEmployee(id: number){
 this.router.navigate(['update-employee', id]);
 }
 
+//VIEW Employee
+viewEmployee(id: number){
+this.router.navigate(['view-employee', id]);
+}
 
 
 

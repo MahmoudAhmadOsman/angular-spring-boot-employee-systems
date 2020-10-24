@@ -36,25 +36,45 @@
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.email}}</td>
                 <td>
-                  <a href="/employees/{{employee.id}}" class="text-primary">
+                  <!-- <a
+                    href="/employees/{{employee.id}}"
+                    class="btn btn-outline-primary btn-sm"
+                  >
                     <i class="fa fa-book" aria-hidden="true"></i>
                     View
-                  </a>
+                  </a> -->
+                  <button
+                    (click)="viewEmployee(employee.id)"
+                    class="btn btn-outline-primary btn-sm"
+                  >
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    View
+                  </button>
                 </td>
 
                 <td>
-                  <a
+                  <button
+                    (click)="updateEmployee(employee.id)"
+                    class="btn btn-outline-info btn-sm"
+                  >
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit
+                  </button>
+                  <!-- <a
                     href="/update-employee/{{employee.id}}"
                     (click)="updateEmployee(employee.id)"
                     class="text-info"
                   >
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     Edit
-                  </a>
+                  </a> -->
                 </td>
 
                 <td>
-                  <a href="/employees/{{employee.id}}" class="text-danger">
+                  <a
+                    href="/employees/{{employee.id}}"
+                    class="btn btn-outline-danger btn-sm"
+                  >
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                     Delete
                   </a>

@@ -25,7 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 
 //Add RestController  & RequestMapping Annotations
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/")
 public class EmployeeController {
@@ -54,8 +54,7 @@ public class EmployeeController {
         return employeeRepository.save(employee);
     }
 
-   //@GET BY ID METHOD
-   //@CrossOrigin(origins = "http://localhost:4200") //class leve CORS
+   //@GET METHOD
   @DeleteMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
         Employee employee = employeeRepository.findById(id)
@@ -69,7 +68,7 @@ public class EmployeeController {
 
    //@UPDATE METHOD
     //Annotate @PutMapping,  add @PathVariable &  @RequestBody
-   //@CrossOrigin("http://localhost:4200")
+   @CrossOrigin(origins = "http://localhost:4200") //class level CORS
    @PutMapping("/employees/{id}")
    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails){
        //Retrieve user from the database
