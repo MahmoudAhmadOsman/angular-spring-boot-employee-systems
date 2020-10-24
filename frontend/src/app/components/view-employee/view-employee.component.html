@@ -1,7 +1,7 @@
 <section class="view_employee_details">
   <div class="container">
     <div class="employee_create_form d-flex-inline float-right">
-      <a href="/employees" title="Go back" class="btn btn-info btn-sm"
+      <a href="/employees" title="Go back" class="btn btn-info btn-sm mt-3"
         ><i class="fa fa-chevron-left"></i
       ></a>
     </div>
@@ -9,11 +9,19 @@
       <div class="col-md-8 mx-auto">
         <h1 class="text-success">{{title}}</h1>
         <hr />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
         <div class="form-group">
           <label for="id"><b>Employee ID</b></label>
           <input type="text" class="form-control form-control-lg" disabled />
           {{employee.id}}
         </div>
+      </div>
+
+      <div class="col-md-6">
         <div class="form-group">
           <label for="firstName"><b>First Name</b> </label>
           <input
@@ -22,6 +30,12 @@
             disabled
           />{{employee.firstName}}
         </div>
+      </div>
+    </div>
+
+    <!-- second row -->
+    <div class="row">
+      <div class="col-md-6">
         <div class="form-group">
           <label for="lastName"><b>Last Name</b> </label>
 
@@ -31,6 +45,8 @@
             disabled
           />{{employee.lastName}}
         </div>
+      </div>
+      <div class="col-md-6">
         <div class="form-group">
           <label for="email"><b>Email</b> </label>
 
