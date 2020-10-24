@@ -8,6 +8,7 @@ import com.employee.exception.ResourceNotFoundException;
 import com.employee.modal.Employee;
 import com.employee.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 
 //Add RestController  & RequestMapping Annotations
@@ -35,6 +38,7 @@ public class EmployeeController {
     //@GET METHOD
     //1. GET REST API - Get all the employee list from the database using <List> method
     // Setup a getAllEmployees() function and pass the employeeRepository with the Spring Boot findAll() method
+
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
@@ -51,7 +55,7 @@ public class EmployeeController {
     }
 
    //@GET BY ID METHOD
- ///  @CrossOrigin(origins = "http://localhost:4200") class leve CORS
+   //@CrossOrigin(origins = "http://localhost:4200") //class leve CORS
   @DeleteMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
         Employee employee = employeeRepository.findById(id)
@@ -65,7 +69,7 @@ public class EmployeeController {
 
    //@UPDATE METHOD
     //Annotate @PutMapping,  add @PathVariable &  @RequestBody
-   //@CrossOrigin(origins = "http://localhost:4200"//Don't use
+   //@CrossOrigin("http://localhost:4200")
    @PutMapping("/employees/{id}")
    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails){
        //Retrieve user from the database
@@ -88,12 +92,16 @@ public class EmployeeController {
 //    @DeleteMapping("/employees/{id}")
 //    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
 //        Employee employee = employeeRepository.findById(id)
-//                .orElseThrow(()-> new ResourceNotFoundException("Employee with this " + id + " does not exist."));
+//                .orElseThrow(()-> new ResourceNotFoundException("Employee with this id does not exist." +id));
 //        employeeRepository.delete(employee);
 //        Map<String, Boolean> response = new HashMap<>();
 //        response.put("deleted", Boolean.TRUE);
 //        return ResponseEntity.ok(response);
 //    }
+
+
+
+
 
 
 
