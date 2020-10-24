@@ -27,7 +27,7 @@ createEmployee(employee: Employee):Observable<Object>{
 
 //======= GET Employee by id - to update an employee
 //--Make RESTapi call
-getEmployeeById(id:number):Observable<Employee>  {
+getEmployeeById(id:number): Observable<Employee>  {
 return this.httpClient.get<Employee>(`${this.baseUrl}/${id}`);
 }
  

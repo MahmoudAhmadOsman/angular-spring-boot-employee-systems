@@ -12,14 +12,15 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BooksComponent } from './components/books/books.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';    
 import { ToastrModule } from 'ngx-toastr';
-import { UpdateEmployeeComponent } from './update-employee/update-employee.component'; 
-@NgModule({
+ @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
@@ -27,10 +28,11 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     NavbarComponent,
     BooksComponent,
     CreateEmployeeComponent,
+     UpdateEmployeeComponent,
     ParentComponent,
     ChildComponent,
     ContactComponent,
-    UpdateEmployeeComponent,
+
     
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],

@@ -1,7 +1,8 @@
-import { Employee } from './../employee';
-import { EmployeeService } from './../services/employee.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { EmployeeService } from './../../services/employee.service';
+import { Employee } from './../../employee';
 
 @Component({
   selector: 'app-update-employee',
@@ -15,6 +16,7 @@ export class UpdateEmployeeComponent implements OnInit {
 id: number;
 employee: Employee = new Employee();
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute) { }
+
 
   ngOnInit(): void {
     //3. Then, get new emp. by id by using activated route
