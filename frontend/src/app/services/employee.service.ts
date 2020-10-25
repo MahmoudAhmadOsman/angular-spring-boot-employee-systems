@@ -17,8 +17,8 @@ export class EmployeeService {
   }
 
 //1. Form Processing method
-//================You can also use Observable<any>
-createEmployee(employee: Employee):Observable<Object>{
+//================You can also use Observable<any> or <Object>
+createEmployee(employee: Employee):Observable<any>{
   //Use POST method and pass the baseUrl to the POST method
   return this.httpClient.post(`${this.baseUrl}`, employee);
 //2. @Inject this function into the create-employee.component.ts contructor() function
@@ -39,5 +39,19 @@ return this.httpClient.get<Employee>(`${this.baseUrl}/${id}`);
 viewEmployee(id:number): Observable<Employee>  {
 return this.httpClient.get<Employee>(`${this.baseUrl}/${id}`);
 }
+
+
+
+//==UPDATE METHOD
+
+updateEmployee(id: number, employee: Employee):Observable<Object>{
+  return this.httpClient.put(`${this.baseUrl}/${id}`, employee);
+  //Now, call this function inside the update employee .ts 
+}
+
+
+
+
+
 
 }

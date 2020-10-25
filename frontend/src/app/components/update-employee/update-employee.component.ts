@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { EmployeeService } from './../../services/employee.service';
 import { Employee } from './../../employee';
@@ -16,20 +16,31 @@ export class UpdateEmployeeComponent implements OnInit {
 id: number;
 employee: Employee = new Employee();
 
-  constructor(private employeeService: EmployeeService, private route: ActivatedRoute) { }
+  constructor(private employeeService: EmployeeService, private route: ActivatedRoute, private router: Router) { }
 
 
   ngOnInit(): void {
-    //3. Then, get new emp. by id by using activated route
+    //3. Then, get new emp. by id by using activated router
     this.id = this.route.snapshot.params['id'];
-    this.employeeService.getEmployeeById(this.id).subscribe(data =>{
-      this.employee = data;
-    },
-    error => console.log( "Unable to get employee by id ", error));
+  this.employeeService.getEmployeeById(this.id).subscribe( data =>{
+    this.employee =data;
 
-
-
-    
+  }, errror => console.log("Unable to get employee by id ", errror) )
+ 
   }
+
+
+  //onSubmit method that is inside update-employee.component.html form
+onSubmit(){
+    this.employeeService.updateEmployee(this.id, this.employee).subscribe(data=>{
+        this.goToEmployeeList();
+    }, error=> console.log("Error while updating! ", error));
+  }
+
+
+goToEmployeeList(){
+  this.router.navigate(["/employees"]);
+}
+
 
 }

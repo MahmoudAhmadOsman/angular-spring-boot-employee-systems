@@ -30,19 +30,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let employee of employees; let i =index">
+              <tr *ngFor="let employee of employees  let i =index ">
                 <td>{{employee.id}}</td>
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.email}}</td>
                 <td>
-                  <!-- <a
-                    href="/employees/{{employee.id}}"
-                    class="btn btn-outline-primary btn-sm"
-                  >
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                    View
-                  </a> -->
                   <button
                     (click)="viewEmployee(employee.id)"
                     class="btn btn-outline-primary btn-sm"
@@ -60,14 +53,6 @@
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     Edit
                   </button>
-                  <!-- <a
-                    href="/update-employee/{{employee.id}}"
-                    (click)="updateEmployee(employee.id)"
-                    class="text-info"
-                  >
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    Edit
-                  </a> -->
                 </td>
 
                 <td>

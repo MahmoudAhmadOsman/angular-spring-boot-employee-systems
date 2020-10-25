@@ -6,29 +6,23 @@
       ></a>
     </div>
     <div class="row">
-      <div class="col-md-8 mx-auto">
-        <h1 class="text-success">{{title}}</h1>
+      <div class="col-md-12">
+        <h1 class="text-info">{{title}}</h1>
         <hr />
+        <p class="text-muted">
+          Details About
+          <span class="text-info"
+            >{{employee.firstName}} {{employee.lastName}}</span
+          >.
+        </p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="form-group">
           <label for="id"><b>Employee ID</b></label>
-          <input type="text" class="form-control form-control-lg" disabled />
-          {{employee.id}}
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="firstName"><b>First Name</b> </label>
-          <input
-            type="text"
-            class="form-control form-control-lg"
-            disabled
-          />{{employee.firstName}}
+          <p class="badge badge-primary ml-2">{{employee.id}}</p>
         </div>
       </div>
     </div>
@@ -42,19 +36,36 @@
           <input
             type="text"
             class="form-control form-control-lg"
+            value="{{employee.lastName}}"
             disabled
-          />{{employee.lastName}}
+          />
         </div>
       </div>
+
       <div class="col-md-6">
+        <div class="form-group">
+          <label for="firstName"><b>First Name</b> </label>
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            value="{{employee.firstName}}"
+            disabled
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
         <div class="form-group">
           <label for="email"><b>Email</b> </label>
 
           <input
             type="text"
             class="form-control form-control-lg"
+            value="{{employee.email}}"
             disabled
-          />{{employee.email}}
+          />
         </div>
       </div>
     </div>
