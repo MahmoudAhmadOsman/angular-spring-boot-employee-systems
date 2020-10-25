@@ -21,6 +21,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';    
 import { ToastrModule } from 'ngx-toastr';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
+import { FooterComponent } from './components/footer/footer.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { ViewEmployeeComponent } from './components/view-employee/view-employee.
     ChildComponent,
     ContactComponent,
     ViewEmployeeComponent,
+    FooterComponent,
 
     
   ],

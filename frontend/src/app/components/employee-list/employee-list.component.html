@@ -56,13 +56,13 @@
                 </td>
 
                 <td>
-                  <a
-                    href="/employees/{{employee.id}}"
+                  <button
+                    (click)="deleteEmployee(employee.id)"
                     class="btn btn-outline-danger btn-sm"
                   >
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                     Delete
-                  </a>
+                  </button>
                 </td>
               </tr>
             </tbody>

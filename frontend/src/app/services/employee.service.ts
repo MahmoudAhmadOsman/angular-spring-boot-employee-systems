@@ -49,6 +49,11 @@ updateEmployee(id: number, employee: Employee):Observable<Object>{
   //Now, call this function inside the update employee .ts 
 }
 
+//==DELETE METHOD
+deleteEmployee(id: number): Observable<Object>{
+return this.httpClient.delete(`${this.baseUrl}/${id}`);
+//Use this method  in the deleteEmployee() that is inside the employee-list-component.ts
+}
 
 
 

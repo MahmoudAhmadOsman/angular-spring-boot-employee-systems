@@ -40,6 +40,13 @@ this.router.navigate(['view-employee', id]);
 }
 
 
+//DELETE Employee
+deleteEmployee(id: number){
+   this.employeeService.deleteEmployee(id).subscribe(data =>{
+     this.getEmployees();
+   }, error=> console.log("Error: while deleting an employee",error));
+}
+
 
 
 }
