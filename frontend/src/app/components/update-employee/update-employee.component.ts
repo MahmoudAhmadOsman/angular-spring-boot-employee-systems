@@ -33,14 +33,13 @@ employee: Employee = new Employee();
   //onSubmit method that is inside update-employee.component.html form
 onSubmit(){
     this.employeeService.updateEmployee(this.id, this.employee).subscribe(data=>{
-        this.goToEmployeeList();
+        //this.goToEmployeeList();
+        this.router.navigate(["/employees"]);
     }, error=> console.log("Error while updating! ", error));
   }
-
-
-goToEmployeeList(){
-  this.router.navigate(["/employees"]);
-}
+// goToEmployeeList(){
+//   this.router.navigate(["/employees"]);
+// }
 
 
 }
