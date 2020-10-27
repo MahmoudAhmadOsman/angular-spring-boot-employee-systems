@@ -59,6 +59,7 @@ public class EmployeeController {
         //Now, set the names such as firstName, lastName & email
         employee.setFirstName(employeeDetails.getFirstName());
         employee.setLastName(employeeDetails.getLastName());
+        employee.setPhone(employeeDetails.getPhone());
         employee.setEmail(employeeDetails.getEmail());
         //Now save the updated value into the database
         Employee updatedEmployee = employeeRepository.save(employee);

@@ -24,9 +24,10 @@
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
+                <th>Phone</th>
                 <th>View</th>
-                <th></th>
-                <th>Actions</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -35,13 +36,13 @@
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
                 <td>
                   <button
                     (click)="viewEmployee(employee.id)"
                     class="btn btn-outline-primary btn-sm"
                   >
                     <i class="fa fa-eye" aria-hidden="true"></i>
-                    View
                   </button>
                 </td>
 
@@ -51,7 +52,6 @@
                     class="btn btn-outline-info btn-sm"
                   >
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    Edit
                   </button>
                 </td>
 
@@ -61,7 +61,6 @@
                     class="btn btn-outline-danger btn-sm"
                   >
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    Delete
                   </button>
                 </td>
               </tr>

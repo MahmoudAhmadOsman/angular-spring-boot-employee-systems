@@ -22,25 +22,27 @@ public class Employee {
 @NotNull
     @Column(name = "last_name")
     private  String lastName;
-
-
+@NotNull
+@Column(name = "phone")
+private String phone;
 
 @NotNull
     @Column(name = "email")
     private  String email;
 
 
-    //1 -- Empty constructor
+//1 -- Empty constructor
     public Employee() {
     }
 
     //2
-
-    public Employee(String firstName, String lastName, String email) {
+    public Employee(String firstName, String lastName, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.phone = phone;
         this.email = email;
     }
+
 
     //3
 
@@ -68,6 +70,14 @@ public class Employee {
         this.lastName = lastName;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -75,4 +85,5 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
