@@ -6,7 +6,7 @@
  * Angular
  * MYSQL
  * JPA
- * Thymeleaf 
+ * Boostrap 4
 
 ## Clone
 
