@@ -6,7 +6,7 @@
  * Angular
  * MYSQL
  * JPA
- * Boostrap 4
+ * Bootstrap 4
 
 ## Clone
 
