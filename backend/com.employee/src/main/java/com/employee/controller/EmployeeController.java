@@ -32,8 +32,11 @@ public class EmployeeController {
     //@ GET METHOD - Get all emplpoyees from the database using <List> method
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
+
         return employeeRepository.findAll();
     }
+
+
 
     //@CREATE METHOD
     @PostMapping("/employees")
