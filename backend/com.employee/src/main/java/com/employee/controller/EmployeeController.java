@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+ 
 import com.employee.exception.ResourceNotFoundException;
 import com.employee.modal.Employee;
 import com.employee.repository.EmployeeRepository;
@@ -29,7 +30,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    //@ GET METHOD - Get all emplpoyees from the database using <List> method
+    //@ GET METHOD - Get all employees from the database using <List> method
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
 

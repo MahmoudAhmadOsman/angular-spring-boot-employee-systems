@@ -1,3 +1,5 @@
+import { BookService } from './../../services/book.service';
+import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
   title: string = 'Books Inventory';
+  books: Book[];
 
-  constructor() {}
+  constructor(private bookService: BookService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllBooks();
+  }
+
+
+// private getAllBooks(){
+//   this.bookService.getBooksList().subscribe((data =>{
+//     console.log(data);
+//     this.books = data;
+//   }));
+
+
+// }
+
+
+  private getAllBooks() {
+    this.bookService.getBooksList().subscribe((data) => {
+         console.log(data);
+      this.books = data;
+    });
+  }
+
+
+
+
+
+
 }
