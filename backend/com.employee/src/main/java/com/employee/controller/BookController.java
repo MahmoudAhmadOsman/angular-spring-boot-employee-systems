@@ -25,7 +25,7 @@ public class BookController {
     }
 
 
-    //@GET METHOD - find by id
+    //@GET METHOD - Find a book by its id
     @GetMapping("/books/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id){
         Book book = bookRepository.findById(id)
