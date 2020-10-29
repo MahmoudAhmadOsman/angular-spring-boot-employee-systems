@@ -1,13 +1,13 @@
 package com.employee.controller;
 
 import java.util.List;
+
+import com.employee.exception.ResourceNotFoundException;
 import com.employee.modal.Book;
 import com.employee.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -23,6 +23,16 @@ public class BookController {
     public List<Book> getAllBooks(){
         return bookRepository.findAll();
     }
+
+
+    //@GET METHOD - find by id
+    @GetMapping("/books/{id}")
+    public ResponseEntity<Book> getBookById(@PathVariable Long id){
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("book with this id does not exist:" + id));
+        return  ResponseEntity.ok(book);
+    }
+
 
 
 
