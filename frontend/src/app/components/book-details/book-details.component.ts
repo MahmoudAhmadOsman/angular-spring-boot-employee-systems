@@ -19,6 +19,7 @@ export class BookDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.bookService.viewBookDetails(this.id).subscribe(data =>{
+      console.log(data);
       this.book = data;
     },
     error => console.log( "Unable to view or get book by id ", error));
