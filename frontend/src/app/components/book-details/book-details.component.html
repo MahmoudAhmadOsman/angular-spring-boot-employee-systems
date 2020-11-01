@@ -1,0 +1,58 @@
+<section class="book_details">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-info">{{title}}</h1>
+
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <img
+          src="{{book.bookImage}}"
+          alt="{{book.title}}"
+          style="max-height: 350px; width: 100%;"
+        />
+      </div>
+      <div class="col-md-4">
+        <h4>
+          Book Title: &nbsp; <span class="text-muted">{{book.title}}</span>
+        </h4>
+        <hr />
+        <p>
+          <b>Book ISBN:</b> <span class="text-muted">&nbsp; {{book.isbn}}</span>
+        </p>
+        <hr />
+        <p>
+          <b>Book Details:</b> <br />
+          <span class="text-muted">&nbsp; {{book.description}}</span>
+        </p>
+        <hr />
+        <p>
+          <b>Author:</b> <span class="text-muted">&nbsp; {{book.author}}</span>
+        </p>
+        <hr />
+        <p>
+          <b>Price:</b> <span class="text-muted">&nbsp; {{book.price}}</span>
+        </p>
+      </div>
+
+      <div class="col-md-3">
+        <h4>Actions</h4>
+        <hr />
+        <button class="btn btn-outline-primary mr-2">Edit</button>
+
+        <button class="btn btn-outline-danger mr-2">Delete</button>
+      </div>
+      <div class="col-md-2">
+        <h4>Take an Action</h4>
+        <hr />
+        <button class="btn btn-outline-warning btn-lg">
+          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

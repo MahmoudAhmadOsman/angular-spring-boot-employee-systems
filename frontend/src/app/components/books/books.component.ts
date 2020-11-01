@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { BookService } from './../../services/book.service';
 import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ export class BooksComponent implements OnInit {
   title: string = 'Books Inventory';
   books: Book[];
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -25,9 +26,14 @@ export class BooksComponent implements OnInit {
     });
   }
 
-
+//VIEW Book Details
+viewBookDetails(id: number){
+this.router.navigate(['book-details', id]);
+}
 
 
 
 
 }
+
+

@@ -17,6 +17,11 @@ getBooksList(): Observable<Book[]>{
   return this.httpClient.get<Book[]>(`${this.baseURL}`);
 }
 
+//====VIEW METHOD:
+// View Book by its id
+viewBookDetails(id:number): Observable<Book>  {
+return this.httpClient.get<Book>(`${this.baseURL}/${id}`);
+}
 
 
 

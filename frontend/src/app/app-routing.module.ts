@@ -1,3 +1,4 @@
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
  import { ContactComponent } from './components/contact/contact.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"update-employee/:id", component: UpdateEmployeeComponent},
     {path:"view-employee/:id", component: ViewEmployeeComponent},
   { path: 'books', component: BooksComponent },
-  { path: 'contact', component:ContactComponent },
+  {path:"book-details/:id", component: BookDetailsComponent },
+  { path: 'contact', component: ContactComponent },
    { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 

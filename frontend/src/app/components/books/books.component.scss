@@ -10,6 +10,7 @@
     -o-transition: all 0.6s ease-in-out;
     margin-bottom: 30px;
     border-bottom: 3px solid transparent;
+    cursor: pointer;
       &:hover {
         border-bottom: 3px solid #f00;
         transform: scale(1.1, 1.1);

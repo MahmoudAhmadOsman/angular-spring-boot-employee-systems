@@ -13,16 +13,17 @@
     <div class="row">
       <div class="col-md-4 col-sm-6" *ngFor="let book of books; let i =index">
         <div class="card">
-          <img
-            class="card-img-top"
-            src="{{book.bookImage}}"
-            alt="{{book.title}}"
-          />
+          <a (click)="viewBookDetails(book.id)">
+            <img
+              class="card-img-top"
+              src="{{book.bookImage}}"
+              alt="{{book.title}}"
+          /></a>
           <div class="card-body">
-            <h5 class="card-title text-info">
-              <a href="{{book.id}}"> {{book.title}}</a> &nbsp;
+            <h4 class="card-title text-info">
+              {{book.title}} &nbsp;
               <small class="badge badge-info"># {{i + 1}}</small>
-            </h5>
+            </h4>
             <p class="card-text">
               {{book.description}}
             </p>
@@ -30,7 +31,6 @@
             <hr />
             <p class="card-text text-muted">
               <b> Price: </b>
-              <!-- <span class="was-price"> ${{book.price}}</span> -->
               &nbsp;
               <span class="text-price">{{book.price}}</span>
             </p>
@@ -43,12 +43,19 @@
               <span class=""> {{book.author}}</span>
             </p>
             <hr />
-            <a href="{{book.id}}" class="btn btn-outline-secondary btn-sm mr-2">
+            <button
+              class="btn btn-outline-secondary btn-sm mr-2"
+              (click)="viewBookDetails(book.id)"
+            >
               VIEW Course Details
-            </a>
-            <a href="{{book.id}}" class="btn btn-outline-success btn-sm">
+            </button>
+
+            <button
+              class="btn btn-outline-success btn-sm"
+              (click)="viewBookDetails(book.id)"
+            >
               BUY
-            </a>
+            </button>
           </div>
         </div>
       </div>
