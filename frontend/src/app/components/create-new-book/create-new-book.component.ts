@@ -16,7 +16,7 @@ export class CreateNewBookComponent implements OnInit {
 
   constructor(private bookService: BookService, private router: Router) { }
 
-  //Save The Book
+  //Save The NEW Book
 saveBook(){
   this.bookService.createNewBook(this.book).subscribe(data =>{
           console.log(data);
