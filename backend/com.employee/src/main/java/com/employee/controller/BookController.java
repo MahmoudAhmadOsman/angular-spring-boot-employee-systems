@@ -38,7 +38,7 @@ public class BookController {
         return bookRepository.findAll();
     }
 
-    //@CREATE METHOD
+    //@CREATE METHOD OR POST METHOD
     @PostMapping("/books")
     public Book createBook(@RequestBody Book book) {
         return bookRepository.save(book);
