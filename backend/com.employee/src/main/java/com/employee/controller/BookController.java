@@ -29,12 +29,21 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
+
+
     //@ GET METHOD - Get all books
     @GetMapping("/books")
     public List<Book> getAllBooks(){
         
         return bookRepository.findAll();
     }
+
+    //@CREATE METHOD
+    @PostMapping("/books")
+    public Book createBook(@RequestBody Book book) {
+        return bookRepository.save(book);
+    }
+
 
 
     //@GET METHOD - Find a book by its id
