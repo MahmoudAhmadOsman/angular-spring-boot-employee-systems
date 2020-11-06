@@ -28,6 +28,26 @@
               >Book title is required</span
             >
           </div>
+
+          <div class="form-group">
+            <label for="isbn">Book ISBN</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter book ISBN"
+              #isbn="ngModel"
+              [(ngModel)]="book.isbn"
+              name="isbn"
+              id="isbn"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="isbn.invalid && (isbn.dirty || isbn.touched)"
+              >Book ISBN is required</span
+            >
+          </div>
+
           <div class="form-group">
             <label for="bookImage">Book Image</label>
             <input

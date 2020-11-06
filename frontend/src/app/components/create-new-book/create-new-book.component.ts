@@ -25,8 +25,8 @@ saveBook(){
   error=> console.log(error);
 }
 
+
 goToBookList(){
-  //Now you can use the router to navigate the path you want using Angular navigate() function
   this.router.navigate(['/books']);
 }
 
