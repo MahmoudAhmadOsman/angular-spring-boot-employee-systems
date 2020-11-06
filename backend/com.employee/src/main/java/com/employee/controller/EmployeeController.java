@@ -45,7 +45,7 @@ public class EmployeeController {
         return employeeRepository.save(employee);
     }
 
-    //@GET METHOD - find by id
+    //@GET METHOD - Find by ID
     @GetMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
         Employee employee = employeeRepository.findById(id)

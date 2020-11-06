@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { CreateNewBookComponent } from './components/create-new-book/create-new-book.component';
  
  @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
     ViewEmployeeComponent,
     FooterComponent,
     BookDetailsComponent,
+    CreateNewBookComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

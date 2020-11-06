@@ -17,11 +17,23 @@ getBooksList(): Observable<Book[]>{
   return this.httpClient.get<Book[]>(`${this.baseURL}`);
 }
 
+
+
+//Add or Create New Bool
+createNewBook(book: Book):Observable<any>{
+  return this.httpClient.post(`${this.baseURL}`, book);
+ 
+}
+
+ 
+
 //====VIEW METHOD:
 // View Book by its id
 viewBookDetails(id:number): Observable<Book>  {
 return this.httpClient.get<Book>(`${this.baseURL}/${id}`);
 }
+
+
 
 
 

@@ -1,0 +1,114 @@
+<section class="create_new_book">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-info">{{bookTitle}}</h2>
+        <hr />
+        <form
+          #validateForm="ngForm"
+          (ngSubmit)="onSubmitBook()"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group mt-5">
+            <label for="title">Book Title</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter book title"
+              #title="ngModel"
+              [(ngModel)]="book.title"
+              name="title"
+              id="title"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="title.invalid && (title.dirty || title.touched)"
+              >Book title is required</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="bookImage">Book Image</label>
+            <input
+              type="file"
+              class="form-control"
+              placeholder="Enter book title"
+              #bookImage="ngModel"
+              [(ngModel)]="book.bookImage"
+              name="title"
+              id="bookImage"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="bookImage.invalid && (bookImage.dirty || bookImage.touched)"
+              >Book image is required</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="author">Book Author</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter book author"
+              #author="ngModel"
+              [(ngModel)]="book.author"
+              name="author"
+              id="author"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="author.invalid && (author.dirty || author.touched)"
+              >Book author is required</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="price">Book Price</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter book price"
+              #price="ngModel"
+              [(ngModel)]="book.price"
+              name="price"
+              id="price"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="price.invalid && (price.dirty || price.touched)"
+              >Book price is required</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="description">Book Description</label>
+            <textarea
+              class="form-control"
+              placeholder="Enter book description"
+              #description="ngModel"
+              [(ngModel)]="book.description"
+              name="description"
+              id="description"
+              rows="6"
+              required
+            ></textarea>
+            <span
+              class="text-danger"
+              *ngIf="description.invalid && (description.dirty || description.touched)"
+              >Book description is required</span
+            >
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-info" [disabled]="!validateForm.valid">
+              SUBMIT
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
