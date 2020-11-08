@@ -31,8 +31,8 @@ createEmployee(employee: Employee):Observable<any>{
 getEmployeeById(id:number): Observable<Employee>  {
 return this.httpClient.get<Employee>(`${this.baseUrl}/${id}`);
 }
- 
- 
+
+
 
 //====VIEW METHOD:
 // View employee by id
@@ -46,7 +46,7 @@ return this.httpClient.get<Employee>(`${this.baseUrl}/${id}`);
 
 updateEmployee(id: number, employee: Employee):Observable<Object>{
   return this.httpClient.put(`${this.baseUrl}/${id}`, employee);
-  //Now, call this function inside the update employee .ts 
+  //Now, call this function inside the update employee-list.component.ts
 }
 
 //==DELETE METHOD

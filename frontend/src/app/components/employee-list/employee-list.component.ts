@@ -40,6 +40,7 @@ this.router.navigate(['view-employee', id]);
 }
 
 
+
 //DELETE Employee
 deleteEmployee(id: number){
    this.employeeService.deleteEmployee(id).subscribe(data =>{

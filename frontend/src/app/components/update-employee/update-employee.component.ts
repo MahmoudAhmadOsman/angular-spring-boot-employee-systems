@@ -30,7 +30,7 @@ employee: Employee = new Employee();
   }
 
 
-  //onSubmit method that is inside update-employee.component.html form
+//onSubmit method that is inside update-employee.component.html form
 onSubmit(){
     this.employeeService.updateEmployee(this.id, this.employee).subscribe(data=>{
         //this.goToEmployeeList();

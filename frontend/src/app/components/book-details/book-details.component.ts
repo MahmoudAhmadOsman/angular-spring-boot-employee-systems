@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from './../../models/book';
  
 import { Component, OnInit } from '@angular/core';
@@ -10,11 +10,12 @@ import { BookService } from 'src/app/services/book.service';
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent implements OnInit {
+
    title: string ="Book Details";
   id: number;
   book : Book = new Book();
 
-  constructor(private bookService: BookService, private route: ActivatedRoute) { }
+  constructor(private bookService: BookService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -25,6 +26,19 @@ export class BookDetailsComponent implements OnInit {
     error => console.log( "Unable to view or get book by id ", error));
 
   }
+
+
+editBook(id: number){
+  this.router.navigate(['edit-book', id]);
+ 
+}
+
+
+
+
+
+
+
 
 }
 

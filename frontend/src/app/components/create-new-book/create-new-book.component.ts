@@ -10,8 +10,7 @@ import { Book } from 'src/app/models/book';
   styleUrls: ['./create-new-book.component.scss']
 })
 export class CreateNewBookComponent implements OnInit {
-   
-  bookTitle: string = 'Add New Book';
+  addBookTitle: string = 'Add New Book';
   book: Book = new Book();
 
   constructor(private bookService: BookService, private router: Router) { }

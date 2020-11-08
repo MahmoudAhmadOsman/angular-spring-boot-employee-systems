@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="text-info">{{title}}</h1>
+        <h1 class="text-info">
+          {{title}} <span class="text-muted">[{{book.title}}]</span>
+        </h1>
 
         <hr />
       </div>
@@ -34,16 +36,22 @@
         </p>
         <hr />
         <p>
-          <b>Price:</b> <span class="text-muted">&nbsp; {{book.price}}</span>
+          <b>Price:</b> <span class="text-muted">&nbsp; ${{book.price}}</span>
         </p>
       </div>
 
       <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
         <h4>Actions</h4>
         <hr />
-        <button class="btn btn-outline-primary mr-2">Edit</button>
+        <button
+          class="btn btn-outline-primary mr-2"
+          (click)="editBook(book.id)"
+        >
+          Edit
+        </button>
 
         <button class="btn btn-outline-danger mr-2">Delete</button>
+        <a href="/books" class="btn btn-success mr-2">Cancel</a>
       </div>
       <div class="col-lg-2 col-md-6 col-sm-12">
         <h4>Take an Action</h4>

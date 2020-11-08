@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2 class="text-info">{{addBookTitle}}</h2>
+        <h2 class="text-info">
+          {{EditBooktitle}} <span class="text-muted">[{{book.title}}]</span>
+        </h2>
         <hr />
         <form
           #validateForm="ngForm"
@@ -15,7 +17,6 @@
             <input
               type="text"
               class="form-control"
-              placeholder="Enter book title"
               #title="ngModel"
               [(ngModel)]="book.title"
               name="title"

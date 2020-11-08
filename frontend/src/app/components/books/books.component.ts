@@ -33,7 +33,6 @@ this.router.navigate(['book-details', id]);
 
 
 
-
 }
 
 
