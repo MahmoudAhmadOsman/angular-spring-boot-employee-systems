@@ -1,9 +1,15 @@
 .page_footer{
+    width: auto;
     display: block;
     background-color: #ccc;
     color: #888;
-    height: 60px;
-    line-height: 60px;
+     height: 60px; 
+     line-height: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  
  
     p{
         font-size: 12px;

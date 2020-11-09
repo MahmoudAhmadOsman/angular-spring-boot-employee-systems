@@ -24,6 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { CreateNewBookComponent } from './components/create-new-book/create-new-book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
+import { SearchBookComponent } from './components/search-book/search-book.component';
  
  @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
     BookDetailsComponent,
     CreateNewBookComponent,
     EditBookComponent,
+    SearchBookComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
