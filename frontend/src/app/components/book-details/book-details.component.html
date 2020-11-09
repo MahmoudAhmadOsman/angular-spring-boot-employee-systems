@@ -24,7 +24,8 @@
         </h4>
         <hr />
         <p>
-          <b>Book ISBN:</b> <span class="text-muted">&nbsp; {{book.isbn}}</span>
+          <b>Book ISBN:</b>
+          <span class="text-muted">&nbsp; {{book.isbn | uppercase}}</span>
         </p>
         <hr />
         <p>
@@ -33,11 +34,12 @@
         </p>
         <hr />
         <p>
-          <b>Author:</b> <span class="text-muted">&nbsp; {{book.author}}</span>
+          <b>Author:</b>
+          <span class="text-muted">&nbsp; {{book.author | uppercase}}</span>
         </p>
         <hr />
         <p>
-          <b>Price:</b> <span class="text-muted">&nbsp; ${{book.price}}</span>
+          <b>Price:</b> <span class="text-muted">&nbsp; {{book.price}}</span>
         </p>
         <hr />
       </div>

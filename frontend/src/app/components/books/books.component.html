@@ -47,15 +47,15 @@
             <p class="card-text text-muted">
               <b> Price: </b>
               &nbsp;
-              <span class="text-price">${{book.price}}</span>
+              <span class="text-price">{{book.price}}</span>
             </p>
             <p class="card-text text-muted">
               <b> ISBN: </b>
-              <span class=""> {{book.isbn}}</span>
+              <span class=""> {{book.isbn | uppercase}}</span>
             </p>
             <p class="card-text text-muted">
               <b> Auhor: </b>
-              <span class=""> {{book.author}}</span>
+              <span class=""> {{book.author | uppercase}}</span>
             </p>
             <hr />
             <button
