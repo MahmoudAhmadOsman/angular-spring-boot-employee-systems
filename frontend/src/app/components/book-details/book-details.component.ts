@@ -38,27 +38,24 @@ export class BookDetailsComponent implements OnInit {
   }
 
 
-
+  //Edit method
 editBook(id: number){
   this.router.navigate(['edit-book', id]);
  
 }
+
+//DELETE Book
 deleteBook(id: number){
 this.bookService.deleteBook(id).subscribe(data =>{
   this.getAllBooks();
 },error=> console.log("Error: while deleting an books",error))
 }
 
+addToCart(id: number){
+  alert("Working on this book with an id of: "+ this.id);
+}
 
-
-
-////DELETE Employee
-// deleteEmployee(id: number){
-//    this.employeeService.deleteEmployee(id).subscribe(data =>{
-//      this.getEmployees();
-//    }, error=> console.log("Error: while deleting an employee",error));
-// }
-
+ 
 
 }
 

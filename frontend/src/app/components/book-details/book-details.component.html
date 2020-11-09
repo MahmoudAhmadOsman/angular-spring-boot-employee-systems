@@ -61,7 +61,10 @@
       <div class="col-lg-2 col-md-6 col-sm-12">
         <h4>Take an Action</h4>
         <hr />
-        <button class="btn btn-outline-warning btn-lg">
+        <button
+          class="btn btn-outline-warning btn-lg"
+          (click)="addToCart(book.id)"
+        >
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
           Add to Cart
         </button>
