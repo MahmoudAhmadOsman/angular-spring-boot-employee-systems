@@ -29,8 +29,6 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-
-
     //@ GET METHOD - Get all books
     @GetMapping("/books")
     public List<Book> getAllBooks(){
@@ -56,7 +54,7 @@ public class BookController {
 
 
 
-    //@UPDATE METHOD
+    //@UPDATE or EDIT METHOD
     @PutMapping("/books/{id}")
     public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetails){
         //Retrieve user from the database
