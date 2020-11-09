@@ -45,7 +45,7 @@ editBook(id: number, book: Book):Observable<Object> {
  
 
 //DELETE A BOOK
-deleteBookK(id: number): Observable<Object>{
+deleteBook(id: number): Observable<Object>{
 return this.httpClient.delete(`${this.baseURL}/${id}`);
 }
 

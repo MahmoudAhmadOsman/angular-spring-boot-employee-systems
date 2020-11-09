@@ -50,7 +50,12 @@
           Edit
         </button>
 
-        <button class="btn btn-outline-danger mr-2">Delete</button>
+        <button
+          class="btn btn-outline-danger mr-2"
+          (click)="deleteBook(book.id)"
+        >
+          Delete
+        </button>
         <a href="/books" class="btn btn-success mr-2">Cancel</a>
       </div>
       <div class="col-lg-2 col-md-6 col-sm-12">

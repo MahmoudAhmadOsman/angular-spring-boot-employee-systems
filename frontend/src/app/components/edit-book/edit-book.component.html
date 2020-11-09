@@ -50,22 +50,24 @@
           </div>
 
           <div class="form-group">
-            <label for="bookImage">Book Image</label>
-            <input
+            <label for="book_image">Book Image</label>
+            <img src="{{book.bookImage}}" class="form-control" />
+
+            <!-- <input
               type="file"
               class="form-control"
-              placeholder="Enter book title"
+              placeholder="Enter book image"
               #bookImage="ngModel"
               [(ngModel)]="book.bookImage"
-              name="title"
-              id="bookImage"
+              name="book_image"
+              id="book_image"
               required
             />
             <span
               class="text-danger"
               *ngIf="bookImage.invalid && (bookImage.dirty || bookImage.touched)"
-              >Book image is required</span
-            >
+              >Book image is required</span> 
+            -->
           </div>
           <div class="form-group">
             <label for="author">Book Author</label>

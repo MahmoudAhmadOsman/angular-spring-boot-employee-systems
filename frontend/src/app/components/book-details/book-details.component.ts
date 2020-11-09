@@ -11,9 +11,10 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class BookDetailsComponent implements OnInit {
 
-   title: string ="Book Details";
+  title: string ="Book Details";
   id: number;
-  book : Book = new Book();
+  book: Book = new Book(); //hmm
+   
 
   constructor(private bookService: BookService, private route: ActivatedRoute, private router: Router) { }
 
@@ -27,17 +28,36 @@ export class BookDetailsComponent implements OnInit {
 
   }
 
+  //GET - Get list of all books
+  private getAllBooks() {
+    this.bookService.getBooksList().subscribe((data) => {
+         console.log(data);
+         this.router.navigate(['/books']);
+      
+    });
+  }
+
+
 
 editBook(id: number){
   this.router.navigate(['edit-book', id]);
  
 }
+deleteBook(id: number){
+this.bookService.deleteBook(id).subscribe(data =>{
+  this.getAllBooks();
+},error=> console.log("Error: while deleting an books",error))
+}
 
 
 
 
-
-
+////DELETE Employee
+// deleteEmployee(id: number){
+//    this.employeeService.deleteEmployee(id).subscribe(data =>{
+//      this.getEmployees();
+//    }, error=> console.log("Error: while deleting an employee",error));
+// }
 
 
 }

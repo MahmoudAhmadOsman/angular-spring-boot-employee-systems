@@ -13,7 +13,12 @@
     cursor: pointer;
       &:hover {
         border-bottom: 3px solid #f00;
-        transform: scale(1.1, 1.1);
+        //transform: scale(1.1, 1.1);
+        box-shadow: 8px 9px 10px #ccc;
+        -webkit-box-shadow: 8px 9px 10px #ccc;
+        -moz-box-shadow: 8px 9px 10px #ccc;
+        -ms-box-shadow: 8px 9px 10px #ccc;
+        -o-box-shadow: 8px 9px 10px #ccc;
 
       }img{
   max-height: 180px;
