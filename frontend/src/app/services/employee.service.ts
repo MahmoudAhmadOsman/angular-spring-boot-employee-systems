@@ -11,7 +11,8 @@ export class EmployeeService {
 
   constructor(private httpClient: HttpClient) {}
 
-  //Create a method getEmployeesList() and call Observable
+  //Create a method getEmployeesList() and call Observable on it
+  //. Get List of ALL employees
   getEmployeesList(): Observable<Employee[]> {
     return this.httpClient.get<Employee[]>(`${this.baseUrl}`);
   }
