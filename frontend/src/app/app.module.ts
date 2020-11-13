@@ -24,8 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { CreateNewBookComponent } from './components/create-new-book/create-new-book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
-import { SearchBookComponent } from './components/search-book/search-book.component';
- 
+  
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
  
@@ -49,7 +48,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BookDetailsComponent,
     CreateNewBookComponent,
     EditBookComponent,
-    SearchBookComponent,
+ 
   
   
   ],

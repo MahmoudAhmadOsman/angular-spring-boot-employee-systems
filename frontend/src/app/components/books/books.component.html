@@ -23,13 +23,26 @@
             </a>
           </div>
 
-          <app-search-book></app-search-book>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="search"
+              placeholder="Search a book by name...."
+              [(ngModel)]="searchBookName"
+            />
+          </div>
+          <br />
+          {{searchBookName | uppercase}}
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-3 col-sm-6" *ngFor="let book of books; let i =index">
+      <div
+        class="col-md-3 col-sm-6"
+        *ngFor="let book of books | filter:searchBookName  let i =index"
+      >
         <div class="card">
           <a (click)="viewBookDetails(book.id)">
             <img

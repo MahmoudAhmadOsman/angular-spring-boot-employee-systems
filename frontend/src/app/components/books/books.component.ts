@@ -12,6 +12,9 @@ export class BooksComponent implements OnInit {
   title: string = 'Books Inventory';
   books: Book[];
 
+ //Search book
+  searchBookName: string;
+
   constructor(private bookService: BookService, private router: Router) {}
 
   ngOnInit(): void {
