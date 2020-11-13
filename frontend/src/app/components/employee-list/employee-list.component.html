@@ -16,6 +16,19 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <input
+            type="text"
+            [(ngModel)]="EmployeeName"
+            class="form-control"
+            placeholder="Search by a country name"
+          />
+        </div>
+        {{EmployeeName | uppercase}}
+
+        <br />
+        <br />
+
         <div class="table-responsive-sm">
           <table class="table table-sm">
             <thead>
@@ -31,7 +44,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let employee of employees  let i =index">
+              <tr
+                *ngFor="let employee of employees | filter:EmployeeName   let i =index"
+              >
                 <td>{{employee.id}}</td>
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>

@@ -26,6 +26,12 @@ import { CreateNewBookComponent } from './components/create-new-book/create-new-
 import { EditBookComponent } from './components/edit-book/edit-book.component';
 import { SearchBookComponent } from './components/search-book/search-book.component';
  
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+ 
+ 
+
+ 
  @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +50,13 @@ import { SearchBookComponent } from './components/search-book/search-book.compon
     CreateNewBookComponent,
     EditBookComponent,
     SearchBookComponent,
+  
+  
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule,
+     AppRoutingModule,
+     HttpClientModule, FormsModule, 
+     Ng2SearchPipeModule],
   providers: [],
   
   bootstrap: [AppComponent],

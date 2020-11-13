@@ -1,14 +1,18 @@
 import { Router } from '@angular/router';
 import { EmployeeService } from './../../services/employee.service';
 import { Employee } from './../../employee';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, PipeTransform } from '@angular/core';
+ 
+  
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.scss'],
+   
 })
 export class EmployeeListComponent implements OnInit {
+//Search
+  EmployeeName: string;
   title: string = 'Employee Inventory';
   //Import the Employee class
   employees: Employee[];
