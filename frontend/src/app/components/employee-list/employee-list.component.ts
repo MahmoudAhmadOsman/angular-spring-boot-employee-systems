@@ -13,7 +13,7 @@ import { Component, OnInit, PipeTransform } from '@angular/core';
 export class EmployeeListComponent implements OnInit {
 //Search
   EmployeeName: string;
-  title: string = 'Employee Inventory';
+  title: string = 'Employees Inventory';
   //Import the Employee class
   employees: Employee[];
 
