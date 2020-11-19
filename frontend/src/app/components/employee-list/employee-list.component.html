@@ -45,7 +45,10 @@
             </thead>
             <tbody>
               <tr
-                *ngFor="let employee of employees | filter:EmployeeName   let i =index"
+                *ngFor="let employee of employees | filter:EmployeeName  | paginate: { id: 'listing_pagination',
+                                                      itemsPerPage: 10,
+                                                      currentPage: page,
+                                                      totalItems: totalRecords }   let i =index "
               >
                 <td>{{employee.id}}</td>
                 <td>{{employee.firstName}}</td>
@@ -81,6 +84,23 @@
               </tr>
             </tbody>
           </table>
+
+          <!-- Start of Pagination -->
+          <pagination-controls
+            id="listing_pagination"
+            (pageChange)="page = $event"
+            maxSize="4"
+            directionLinks="true"
+            autoHide="true"
+            responsive="true"
+            previousLabel="Previous"
+            nextLabel="Next"
+            screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page"
+            screenReaderCurrentLabel="You're on page"
+          >
+          </pagination-controls>
+          <!-- End of Pagination -->
         </div>
       </div>
     </div>

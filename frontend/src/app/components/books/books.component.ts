@@ -11,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class BooksComponent implements OnInit {
   title: string = 'Books Inventory';
   books: Book[];
-
  //Search book
   searchBookName: string;
+
+  //Pagination
+  totalRecords: String;
+  page: Number=1;
+
 
   constructor(private bookService: BookService, private router: Router) {}
 

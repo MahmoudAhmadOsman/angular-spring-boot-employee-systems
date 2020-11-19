@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+ import {NgxPaginationModule} from 'ngx-pagination'; 
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -55,7 +56,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
   imports: [BrowserModule,
      AppRoutingModule,
      HttpClientModule, FormsModule, 
-     Ng2SearchPipeModule],
+     Ng2SearchPipeModule,
+    NgxPaginationModule
+    ],
   providers: [],
   
   bootstrap: [AppComponent],

@@ -14,6 +14,10 @@ export class EmployeeListComponent implements OnInit {
 //Search
   EmployeeName: string;
   title: string = 'Employees Inventory';
+  //Pagination
+  totalRecords: String;
+  page: Number=1;
+
   //Import the Employee class
   employees: Employee[];
 
@@ -28,7 +32,11 @@ export class EmployeeListComponent implements OnInit {
   //and subscribe to to the  EmployeeService class to get the empployee list that stored in the backend
   private getEmployees() {
     this.employeeService.getEmployeesList().subscribe((data) => {
+     
       this.employees = data;
+    //this.totalRecords = data.employees.length;
+
+        
     });
   }
 
