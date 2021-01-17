@@ -22,9 +22,10 @@
             [(ngModel)]="EmployeeName"
             class="form-control"
             placeholder="Search employee by name"
+            style="border-radius: 50px;"
           />
         </div>
-        {{EmployeeName | uppercase}}
+        <span class="text-muted"> {{EmployeeName | uppercase}}</span>
 
         <br />
         <br />
@@ -46,7 +47,7 @@
             <tbody>
               <tr
                 *ngFor="let employee of employees | filter:EmployeeName  | paginate: { id: 'listing_pagination',
-                                                      itemsPerPage: 10,
+                                                      itemsPerPage: 8,
                                                       currentPage: page,
                                                       totalItems: totalRecords }   let i =index "
               >

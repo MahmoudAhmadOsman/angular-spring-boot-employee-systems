@@ -25,6 +25,7 @@
           <hr />
           <br />
           <br />
+
           <div class="form-group">
             <input
               type="text"
@@ -32,10 +33,10 @@
               name="search"
               placeholder="Search a book by name...."
               [(ngModel)]="searchBookName"
+              style="border-radius: 50px;"
             />
           </div>
-          <br />
-          {{searchBookName | uppercase}}
+          <span class="text-muted">{{searchBookName | uppercase}}</span>
         </div>
       </div>
     </div>

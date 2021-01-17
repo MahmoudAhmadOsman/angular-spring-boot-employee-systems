@@ -4,6 +4,20 @@
       <div class="col-md-8 mx-auto">
         <h1 class="text-primary">{{title}}</h1>
         <hr />
+
+        <!-- Start of displaying alert success -->
+        <!-- <div
+          *ngIf="showSuccessAlert"
+          class="alert alert-success alert-dismissible"
+        >
+          <button type="button" class="close" data-dismiss="alert">
+            &times;
+          </button>
+          <i class="fa fa-check fa-1x"></i>&nbsp; <strong>Success.</strong> A
+          record has been created!
+        </div> -->
+        <!-- End of displaying alert success -->
+
         <!-- Start of form -->
         <form #validateForm="ngForm" (ngSubmit)="onSubmit()" method="POST">
           <div class="form-group">

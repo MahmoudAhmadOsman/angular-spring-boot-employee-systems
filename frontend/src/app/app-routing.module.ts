@@ -12,7 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+   { path: '', component: HomeComponent },
   { path: 'employees', component: EmployeeListComponent },
   { path: 'create-employee', component: CreateEmployeeComponent },
   {path:"update-employee/:id", component: UpdateEmployeeComponent},

@@ -14,7 +14,10 @@ export class UpdateEmployeeComponent implements OnInit {
 //1. @inject EmployeeService 
 //2. Create instantiate new employee object
 id: number;
-employee: Employee = new Employee();
+  employee: Employee = new Employee();
+  
+ //Success alert
+  //showSuccessAlert:boolean = false;
 
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute, private router: Router) { }
 
@@ -34,7 +37,8 @@ employee: Employee = new Employee();
 onSubmit(){
     this.employeeService.updateEmployee(this.id, this.employee).subscribe(data=>{
         //this.goToEmployeeList();
-        this.router.navigate(["/employees"]);
+      this.router.navigate(["/employees"]);
+     // this.showSuccessAlert = true;
     }, error=> console.log("Error while updating! ", error));
   }
 // goToEmployeeList(){

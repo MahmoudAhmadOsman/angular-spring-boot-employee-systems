@@ -57,7 +57,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
      AppRoutingModule,
      HttpClientModule, FormsModule, 
      Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
     ],
   providers: [],
   

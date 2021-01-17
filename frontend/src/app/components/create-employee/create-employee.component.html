@@ -4,6 +4,19 @@
       <div class="col-md-8 mx-auto">
         <h1 class="text-primary">{{title}}</h1>
         <hr />
+        <br />
+        <!-- Start of displaying alert success -->
+        <div
+          *ngIf="showSuccessAlert"
+          class="alert alert-success alert-dismissible"
+        >
+          <button type="button" class="close" data-dismiss="alert">
+            &times;
+          </button>
+          <i class="fa fa-check fa-1x"></i>&nbsp; <strong>Success.</strong> A
+          new record has been created!
+        </div>
+        <!-- End of displaying alert success -->
 
         <!-- Start of form -->
         <form #validateForm="ngForm" (ngSubmit)="onSubmit()" method="POST">
@@ -54,6 +67,7 @@
               [(ngModel)]="employee.phone"
               name="phone"
               id="phone"
+              maxlength="11"
               required
             />
             <span
@@ -65,21 +79,25 @@
 
           <div class="form-group">
             <label for="email">Email address</label>
+
             <input
               type="email"
               class="form-control form-control-lg"
               placeholder="Enter email address"
-              #email="ngModel"
-              [(ngModel)]="employee.email"
-              name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
               id="email"
-              required
+              name="email"
+              [(ngModel)]="employee.email"
+              #email="ngModel"
             />
-            <span
+            <div
               class="text-danger"
               *ngIf="email.invalid && (email.dirty || email.touched)"
-              >Email address is required</span
             >
+              <span [hidden]="!emailref.errors?.pattern">
+                Invalid email address. Please enter valid email address
+              </span>
+            </div>
           </div>
 
           <button

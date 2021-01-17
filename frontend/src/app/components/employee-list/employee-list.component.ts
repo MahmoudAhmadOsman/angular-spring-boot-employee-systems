@@ -16,7 +16,7 @@ export class EmployeeListComponent implements OnInit {
   title: string = 'Employees Inventory';
   //Pagination
   totalRecords: String;
-  page: Number=1;
+  page: Number = 1;
 
   //Import the Employee class
   employees: Employee[];
@@ -54,7 +54,8 @@ this.router.navigate(['view-employee', id]);
 
 
 //DELETE Employee
-deleteEmployee(id: number){
+  deleteEmployee(id: number) {
+    alert("Are you sure, you want to delete this record?");
    this.employeeService.deleteEmployee(id).subscribe(data =>{
      this.getEmployees();
    }, error=> console.log("Error: while deleting an employee",error));
