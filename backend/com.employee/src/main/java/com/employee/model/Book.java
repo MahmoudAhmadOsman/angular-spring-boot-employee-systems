@@ -1,6 +1,6 @@
-package com.employee.modal;
+package com.employee.model;
 
-import com.sun.istack.NotNull;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,24 +19,24 @@ public class Book {
     private Long id;
 
 
-    @NotNull
-    @Column(name = "title")
+
+    @Column(name = "title", nullable = false)
     private String title;
-    @NotNull
-    @Column(name = "isbn")
+
+    @Column(name = "isbn", nullable = false)
     private String isbn;
 
-    @NotNull
-    @Column(name = "book_image")
+
+    @Column(name = "book_image", nullable = false)
     private String bookImage;
-    @NotNull
-    @Column(name = "description")
+
+    @Column(name = "description", nullable = false)
     private String description;
-    @NotNull
-    @Column(name = "price")
+
+    @Column(name = "price", nullable = false)
     private String price;
-    @NotNull
-    @Column(name = "author")
+
+    @Column(name = "author", nullable = false)
     private String author;
 
     public Book() {

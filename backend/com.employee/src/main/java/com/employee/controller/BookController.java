@@ -5,11 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import com.employee.exception.ResourceNotFoundException;
-import com.employee.modal.Book;
+import com.employee.model.Book;
 import com.employee.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

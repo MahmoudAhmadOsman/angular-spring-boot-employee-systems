@@ -1,4 +1,4 @@
-package com.employee.modal;
+package com.employee.model;
 
 import com.sun.istack.NotNull;
 
@@ -17,35 +17,32 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-@NotNull
-    @Column(name = "first_name")
+    @Column(name = "first_name", nullable = false)
     private String firstName;
-@NotNull
-    @Column(name = "last_name")
+
+    @Column(name = "last_name", nullable = false)
     private  String lastName;
-@NotNull
-@Column(name = "phone")
+
+@Column(name = "phone", nullable = false)
 private String phone;
 
-@NotNull
-    @Column(name = "email")
+
+    @Column(name = "email", unique = true, nullable = false)
     private  String email;
 
 
-//1 -- Empty constructor
+// Empty constructor
     public Employee() {
     }
 
-    //2
+    //
     public Employee(String firstName, String lastName, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
     }
-
-    //3
-
+    //
     public Long getId() {
         return id;
     }
