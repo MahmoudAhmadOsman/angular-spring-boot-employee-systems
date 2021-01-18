@@ -16,8 +16,8 @@ export class UpdateEmployeeComponent implements OnInit {
 id: number;
   employee: Employee = new Employee();
   
- //Success alert
-  //showSuccessAlert:boolean = false;
+  //Success alert
+  showSuccessUpdateAlert: boolean = false;
 
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute, private router: Router) { }
 
@@ -35,15 +35,23 @@ id: number;
 
 //onSubmit method that is inside update-employee.component.html form
 onSubmit(){
-    this.employeeService.updateEmployee(this.id, this.employee).subscribe(data=>{
-        //this.goToEmployeeList();
-      this.router.navigate(["/employees"]);
-     // this.showSuccessAlert = true;
-    }, error=> console.log("Error while updating! ", error));
-  }
-// goToEmployeeList(){
-//   this.router.navigate(["/employees"]);
-// }
+  this.employeeService.updateEmployee(this.id, this.employee).subscribe(data => {
+   
+    this.showSuccessUpdateAlert = true;
+     
+    this.goToEmployeesList();
+    //OR 
+      //this.router.navigate(["/employees"]);
 
+  }, error => console.log("Error while updating! ", error));
+    
+  } 
+
+  goToEmployeesList() {
+    //this.showSuccessUpdateAlert = true;
+    this.router.navigate(["/employees"]);
+   
+  }
+ 
 
 }

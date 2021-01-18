@@ -7,7 +7,7 @@
           <span class="text-muted">List of all employees</span>
           <div class="employee_create_form d-flex-inline float-right">
             <a
-              href="/create-employee"
+              href="employees/create-employee"
               class="btn btn-info"
               title="Create New Employee"
             >
@@ -27,82 +27,106 @@
         </div>
         <span class="text-muted"> {{EmployeeName | uppercase}}</span>
 
-        <br />
-        <br />
+        <!-- Start of displaying alert success -->
+        <div
+          *ngIf="showSuccessDeletedAlert"
+          class="alert alert-danger alert-dismissible"
+        >
+          <button type="button" class="close" data-dismiss="alert">
+            &times;
+          </button>
+          <i class="fa fa-warning fa-1x"></i>&nbsp; <strong>WARNING.</strong> A
+          record has been deleted!
+        </div>
 
-        <div class="table-responsive-sm">
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th>ID #</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>View</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="let employee of employees | filter:EmployeeName  | paginate: { id: 'listing_pagination',
+        <!-- End of displaying alert success -->
+        <div *ngIf="employees.length > 0; else noEmployees">
+          <div class="table-responsive-sm">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>ID #</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>View</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let employee of employees | filter:EmployeeName  | paginate: { id: 'listing_pagination',
                                                       itemsPerPage: 8,
                                                       currentPage: page,
                                                       totalItems: totalRecords }   let i =index "
-              >
-                <td>{{employee.id}}</td>
-                <td>{{employee.firstName}}</td>
-                <td>{{employee.lastName}}</td>
-                <td>{{employee.email}}</td>
-                <td>{{employee.phone}}</td>
-                <td>
-                  <button
-                    (click)="viewEmployee(employee.id)"
-                    class="btn btn-outline-primary btn-sm"
-                  >
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                  </button>
-                </td>
+                >
+                  <td>{{employee.id}}</td>
+                  <td>{{employee.firstName}}</td>
+                  <td>{{employee.lastName}}</td>
+                  <td>{{employee.email}}</td>
+                  <td>{{employee.phone}}</td>
+                  <td>
+                    <button
+                      (click)="viewEmployee(employee.id)"
+                      class="btn btn-outline-primary btn-sm"
+                    >
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                  </td>
 
-                <td>
-                  <button
-                    (click)="updateEmployee(employee.id)"
-                    class="btn btn-outline-info btn-sm"
-                  >
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                  </button>
-                </td>
+                  <td>
+                    <button
+                      (click)="updateEmployee(employee.id)"
+                      class="btn btn-outline-info btn-sm"
+                    >
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>
+                  </td>
 
-                <td>
-                  <button
-                    (click)="deleteEmployee(employee.id)"
-                    class="btn btn-outline-danger btn-sm"
-                  >
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <td>
+                    <button
+                      (click)="deleteEmployee(employee.id)"
+                      class="btn btn-outline-danger btn-sm"
+                    >
+                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-          <!-- Start of Pagination -->
-          <pagination-controls
-            id="listing_pagination"
-            (pageChange)="page = $event"
-            maxSize="4"
-            directionLinks="true"
-            autoHide="true"
-            responsive="true"
-            previousLabel="Previous"
-            nextLabel="Next"
-            screenReaderPaginationLabel="Pagination"
-            screenReaderPageLabel="page"
-            screenReaderCurrentLabel="You're on page"
-          >
-          </pagination-controls>
-          <!-- End of Pagination -->
+            <!-- Start of Pagination -->
+            <pagination-controls
+              id="listing_pagination"
+              (pageChange)="page = $event"
+              maxSize="4"
+              directionLinks="true"
+              autoHide="true"
+              responsive="true"
+              previousLabel="Previous"
+              nextLabel="Next"
+              screenReaderPaginationLabel="Pagination"
+              screenReaderPageLabel="page"
+              screenReaderCurrentLabel="You're on page"
+            >
+            </pagination-controls>
+            <!-- End of Pagination -->
+          </div>
+
+          <!-- Start of *ngif no data div -->
         </div>
+        <!-- End of *ngif no data div -->
+        <!-- Start of ELSE -->
+        <ng-template #noEmployees class="alert alert-warning">
+          <p class="alert alert-warning text-center">
+            <i class="fa fa-warning"></i> &nbsp; No employees data avaiable yet!
+            &nbsp;
+            <a href="/">Go to home</a>
+          </p>
+        </ng-template>
+        <!-- End of ELSE -->
       </div>
     </div>
   </div>

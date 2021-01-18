@@ -13,7 +13,7 @@ export class BookDetailsComponent implements OnInit {
 
   title: string ="Book Details";
   id: number;
-  book: Book = new Book(); //hmm
+  book: Book = new Book(); // instantiate new book object
    
 
   constructor(private bookService: BookService, private route: ActivatedRoute, private router: Router) { }
@@ -40,7 +40,7 @@ export class BookDetailsComponent implements OnInit {
 
   //Edit method
 editBook(id: number){
-  this.router.navigate(['edit-book', id]);
+  this.router.navigate(['/books/edit-book', id]);
  
 }
 

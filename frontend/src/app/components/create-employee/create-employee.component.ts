@@ -46,15 +46,14 @@ goToEmployeeList(){
   reloadPage() {
     setTimeout(() => {
       window.location.reload();
-    }, 2000);
+    }, 1500);
   }
   
   //Define the onSubmit() function to handle the submitted data
   onSubmit() {
     //console.log(this.employee);
     this.saveEmployee();
-     
-  
+    
   }
 
 

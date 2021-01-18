@@ -12,17 +12,39 @@ import { Routes, RouterModule } from '@angular/router';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
 const routes: Routes = [
-   { path: '', component: HomeComponent },
-  { path: 'employees', component: EmployeeListComponent },
-  { path: 'create-employee', component: CreateEmployeeComponent },
-  {path:"update-employee/:id", component: UpdateEmployeeComponent},
-    {path:"view-employee/:id", component: ViewEmployeeComponent},
-  { path: 'books', component: BooksComponent },
-  {path:"book-details/:id", component: BookDetailsComponent },
-  {path: "create-new-book", component: CreateNewBookComponent},
-  {path: "edit-book/:id", component: EditBookComponent},
+  { path: '', component: HomeComponent },
+  
+  {
+    path: "employees", children: [ // Component less route
+      {
+        path: '', component: EmployeeListComponent
+      },
+      { path: 'create-employee', component: CreateEmployeeComponent },
+      { path: "update-employee/:id", component: UpdateEmployeeComponent },
+      { path: "view-employee/:id", component: ViewEmployeeComponent }
+    
+  ]
+},
+
+  {
+    path: "books", children: [
+      { path: '', component: BooksComponent },
+      { path: "book-details/:id", component: BookDetailsComponent },
+      { path: "create-new-book", component: CreateNewBookComponent },
+      { path: "edit-book/:id", component: EditBookComponent },
+      
+    ]
+  },
+
   { path: 'contact', component: ContactComponent },
-   { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+   
+
+
+
+
+
+
 ];
 
 @NgModule({
