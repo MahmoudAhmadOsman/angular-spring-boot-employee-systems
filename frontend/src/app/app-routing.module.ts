@@ -13,40 +13,26 @@ import { UpdateEmployeeComponent } from './components/update-employee/update-emp
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  
+
   {
     path: "employees", children: [ // Component less route
-      {
-        path: '', component: EmployeeListComponent
-      },
+      { path: '', component: EmployeeListComponent},
       { path: 'create-employee', component: CreateEmployeeComponent },
       { path: "update-employee/:id", component: UpdateEmployeeComponent },
       { path: "view-employee/:id", component: ViewEmployeeComponent }
-    
   ]
 },
-
   {
     path: "books", children: [
       { path: '', component: BooksComponent },
       { path: "book-details/:id", component: BookDetailsComponent },
       { path: "create-new-book", component: CreateNewBookComponent },
-      { path: "edit-book/:id", component: EditBookComponent },
-      
+      { path: "edit-book/:id", component: EditBookComponent }, 
     ]
   },
-
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
-   
-
-
-
-
-
-
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
