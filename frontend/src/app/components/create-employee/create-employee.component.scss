@@ -1,8 +1,12 @@
-.create_new_employee{
-    position: relative;
-  .btn-primary.disabled,
-  .btn-primary:disabled {
-  cursor: no-drop;
-}  
-}
+.create_new_employee {
+  position: relative;
 
+  .btn-primary.disabled,
+  label {
+    font-weight: bold;
+  }
+
+  .btn-primary:disabled {
+    cursor: no-drop;
+  }
+}

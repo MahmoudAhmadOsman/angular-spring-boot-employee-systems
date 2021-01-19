@@ -10,7 +10,7 @@ import { Employee } from './../../employee';
   styleUrls: ['./update-employee.component.scss']
 })
 export class UpdateEmployeeComponent implements OnInit {
-  title: string ="Update Employee";
+  title: string ="Update";
 //1. @inject EmployeeService 
 //2. Create instantiate new employee object
 id: number;

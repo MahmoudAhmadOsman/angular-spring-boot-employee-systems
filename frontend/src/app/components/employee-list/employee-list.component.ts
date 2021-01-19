@@ -67,9 +67,15 @@ viewEmployee(id: number){
     this.showSuccessDeletedAlert = true;
    this.employeeService.deleteEmployee(id).subscribe(data =>{
      this.getEmployees();
+     this.hideSuccessAlert();
    }, error=> console.log("Error: while deleting an employee",error));
 }
 
-
+  //Hide the success alert after 2ms
+  hideSuccessAlert() {
+    setTimeout(() => {
+      this.showSuccessDeletedAlert = false;
+    }, 2000);
+  }
 
 }

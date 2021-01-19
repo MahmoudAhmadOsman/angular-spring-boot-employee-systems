@@ -17,9 +17,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
-
+    
     @Column(name = "title", nullable = false)
     private String title;
 

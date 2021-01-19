@@ -38,17 +38,25 @@ saveEmployee(){
 goToEmployeeList(){
   //Now you can use the router to navigate the path you want using Angular navigate() function
   this.router.navigate(['/create-employee']);
-  this.reloadPage();
+  this.hideSuccessAlert();
+  this.relaodPage();
  
 }
 
   //Reload page after 2ms
-  reloadPage() {
+  hideSuccessAlert() {
     setTimeout(() => {
-      window.location.reload();
-    }, 1500);
+      this.showSuccessAlert = false;
+    }, 2500);
   }
   
+  relaodPage() {
+    setTimeout(() => {
+      window.location.reload();
+  
+    }, 100);
+  }
+
   //Define the onSubmit() function to handle the submitted data
   onSubmit() {
     //console.log(this.employee);

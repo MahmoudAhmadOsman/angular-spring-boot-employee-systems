@@ -1,5 +1,13 @@
-
-.create_new_employee{
+.create_new_employee {
     position: relative;
- 
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        color: #7c7070;
+    }
+
 }
