@@ -12,7 +12,7 @@ export class BookService {
 
   constructor(private httpClient: HttpClient) { }
 
-  //GET METHOD- Get all books 
+  //Get all books 
 getBooksList(): Observable<Book[]>{
   return this.httpClient.get<Book[]>(`${this.baseURL}`);
 }
@@ -22,26 +22,26 @@ createNewBook(book: Book):Observable<any>{
  
 }
 
-//Get book by it's it
+//Get book by it's id
 getBookById(id:number): Observable<Book>  {
 return this.httpClient.get<Book>(`${this.baseURL}/${id}`);
 }
 
 
-// VIEW METHOD: View Book by it's id
+//View Book by it's id
 viewBookDetails(id:number): Observable<Book>  {
 return this.httpClient.get<Book>(`${this.baseURL}/${id}`);
 }
 
 
-//Edit OR UPDATE METHOD
+//Edit OR UPDATE 
 editBook(id: number, book: Book):Observable<Object> {
   return this.httpClient.put(`${this.baseURL}/${id}`, book);
   //Now, call this function inside the update book-details.ts 
 }
  
 
-//DELETE METHOD 
+//DELETE 
 deleteBook(id: number): Observable<Object>{
 return this.httpClient.delete(`${this.baseURL}/${id}`);
 }
