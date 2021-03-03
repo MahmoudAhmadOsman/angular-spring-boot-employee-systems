@@ -13,7 +13,7 @@
 To clone this project use this command
 
 ```bash
-$ git clone https://github.com/MahmoudAhmadOsman/employee-system.git
+$ git clone https://github.com/MahmoudAhmadOsman/angular-spring-boot-employee-systems.git
 ```
 
 ### My Website
