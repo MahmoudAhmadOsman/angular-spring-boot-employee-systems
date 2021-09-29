@@ -24,7 +24,7 @@ employee: Employee = new Employee();
     this.employeeService.viewEmployee(this.id).subscribe(data =>{
       this.employee = data;
     },
-    error => console.log( "Unable to view or get employee by id ", error));
+    error => console.log( "Unable to get employee by id ", error));
 
 
 
