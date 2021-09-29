@@ -10,8 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ViewEmployeeComponent implements OnInit {
 
-   title: string ="Employee Details";
-  //1. @inject EmployeeService 
+ title: string ="Employee Details";
+  
+//1. @inject EmployeeService 
 //2. instantiate new employee object
 id: number;
 employee: Employee = new Employee();
@@ -26,13 +27,6 @@ employee: Employee = new Employee();
     },
     error => console.log( "Unable to get employee by id ", error));
 
-
-
-    
   }
 
 }
-
-
-
- 
