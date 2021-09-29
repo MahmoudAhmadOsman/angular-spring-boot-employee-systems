@@ -18,9 +18,8 @@ export class BooksComponent implements OnInit {
   totalRecords: String;
   page: Number=1;
 
-
   constructor(private bookService: BookService, private router: Router) {}
-
+  
   ngOnInit(): void {
     this.getAllBooks();
   }
@@ -40,5 +39,3 @@ this.router.navigate(['/books/book-details', id]);
 
 
 }
-
-
