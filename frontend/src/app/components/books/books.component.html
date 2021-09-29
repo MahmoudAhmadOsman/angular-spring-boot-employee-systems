@@ -1,117 +1,72 @@
 <section class="book_list">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="book_list_title">
-          <h1 class="text-info">
-            {{title}}
-            <span
-              class="text-muted d-flex-inline float-right"
-              style="font-size: 12px;"
-            >
-              Total Books: {{books.length }}</span
-            >
-          </h1>
-
-          <div class="d-flex-inline float-right">
-            <a
-              href="/create-new-book"
-              class="btn btn-info"
-              title="Add New Book"
-            >
-              <i class="fa fa-plus"></i>
-            </a>
-          </div>
-          <hr />
-          <br />
-          <br />
-
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              name="search"
-              placeholder="Search a book by name...."
-              [(ngModel)]="searchBookName"
-              style="border-radius: 50px;"
-            />
-          </div>
-          <span class="text-muted">{{searchBookName | uppercase}}</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="book_list_title">
+                    <h1 class="text-info">
+                        {{title}}
+                        <span class="text-muted d-flex-inline float-right" style="font-size: 12px;">
+                            Total Books: {{books.length }}</span>
+                    </h1>
+                    <div class="d-flex-inline float-right">
+                        <a href="/create-new-book" class="btn btn-info" title="Add New Book">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                    <hr />
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="search" placeholder="Search a book by name...." [(ngModel)]="searchBookName" style="border-radius: 50px;" />
+                    </div>
+                    <span class="text-muted">{{searchBookName | uppercase}}</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div
-        class="col-md-3 col-sm-6"
-        *ngFor="let book of books | filter:searchBookName | paginate: { id: 'listing_pagination',
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let book of books | filter:searchBookName | paginate: { id: 'listing_pagination',
                                                       itemsPerPage: 8,
                                                       currentPage: page,
-                                                      totalItems: totalRecords }   let i =index"
-      >
-        <div class="card">
-          <a (click)="viewBookDetails(book.id)">
-            <img
-              class="card-img-top"
-              src="{{book.bookImage}}"
-              alt="{{book.title}}"
-          /></a>
-          <div class="card-body">
-            <h4 class="card-title text-info">
-              {{book.title}} &nbsp;
-              <small class="badge badge-info"># {{i + 1}}</small>
-            </h4>
-            <p class="card-text">
-              {{book.description}}
-            </p>
-
-            <hr />
-            <p class="card-text text-muted">
-              <b> Price: </b>
-              &nbsp;
-              <span class="text-price">{{book.price}}</span>
-            </p>
-            <p class="card-text text-muted">
-              <b> ISBN: </b>
-              <span class=""> {{book.isbn | uppercase}}</span>
-            </p>
-            <p class="card-text text-muted">
-              <b> Auhor: </b>
-              <span class=""> {{book.author | uppercase}}</span>
-            </p>
-            <hr />
-            <button
-              class="btn btn-outline-secondary btn-sm mr-2"
-              (click)="viewBookDetails(book.id)"
-            >
-              VIEW Course Details
-            </button>
-
-            <button
-              class="btn btn-outline-success btn-sm"
-              (click)="viewBookDetails(book.id)"
-            >
-              BUY
-            </button>
-          </div>
+                                                      totalItems: totalRecords }   let i =index">
+                <div class="card">
+                    <a (click)="viewBookDetails(book.id)">
+                        <img class="card-img-top" src="{{book.bookImage}}" alt="{{book.title}}" /></a>
+                    <div class="card-body">
+                        <h4 class="card-title text-info">
+                            {{book.title}} &nbsp;
+                            <small class="badge badge-info"># {{i + 1}}</small>
+                        </h4>
+                        <p class="card-text">
+                            {{book.description}}
+                        </p>
+                        <hr />
+                        <p class="card-text text-muted">
+                            <b> Price: </b>
+                            &nbsp;
+                            <span class="text-price">{{book.price}}</span>
+                        </p>
+                        <p class="card-text text-muted">
+                            <b> ISBN: </b>
+                            <span class=""> {{book.isbn | uppercase}}</span>
+                        </p>
+                        <p class="card-text text-muted">
+                            <b> Auhor: </b>
+                            <span class=""> {{book.author | uppercase}}</span>
+                        </p>
+                        <hr />
+                        <button class="btn btn-outline-secondary btn-sm mr-2" (click)="viewBookDetails(book.id)">
+                            VIEW Course Details
+                        </button>
+                        <button class="btn btn-outline-success btn-sm" (click)="viewBookDetails(book.id)">
+                            BUY
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Start of Pagination -->
+            <pagination-controls id="listing_pagination" (pageChange)="page = $event" maxSize="7" directionLinks="true" autoHide="true" responsive="true" previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+            </pagination-controls>
+            <!-- End of Pagination -->
         </div>
-      </div>
-      <!-- Start of Pagination -->
-      <pagination-controls
-        id="listing_pagination"
-        (pageChange)="page = $event"
-        maxSize="7"
-        directionLinks="true"
-        autoHide="true"
-        responsive="true"
-        previousLabel="Previous"
-        nextLabel="Next"
-        screenReaderPaginationLabel="Pagination"
-        screenReaderPageLabel="page"
-        screenReaderCurrentLabel="You're on page"
-      >
-      </pagination-controls>
-      <!-- End of Pagination -->
     </div>
-  </div>
 </section>
