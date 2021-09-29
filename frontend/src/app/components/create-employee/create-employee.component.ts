@@ -20,7 +20,7 @@ export class CreateEmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeeService, private router: Router) {
 
   }
-//then create a save method
+//Save method
 saveEmployee(){
   this.employeeService.createEmployee(this.employee).subscribe(data =>{
           //console.log(data);
@@ -34,7 +34,7 @@ saveEmployee(){
   error=> console.log(error);
 }
 
-//After you save, go back to the employee page, but you need to inject router into the contructor()
+//After employee is saved, redirect to homepage
 goToEmployeeList(){
   //Now you can use the router to navigate the path you want using Angular navigate() function
   this.router.navigate(['/create-employee']);
@@ -70,7 +70,7 @@ goToEmployeeList(){
 
 //Toaster message
 //   successmsg(){  
-//     this.toastr.success("New employee registered!",'Success')  
+//     this.toastr.success("New employee has been registered!",'Success')  
 // }
 
 }
