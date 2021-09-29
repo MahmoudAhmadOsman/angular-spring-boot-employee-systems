@@ -1,117 +1,52 @@
 <section class="create_new_employee">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <h1 class="text-primary">{{title}}</h1>
-        <hr />
-        <br />
-        <!-- Start of displaying alert success -->
-        <div
-          *ngIf="showSuccessAlert"
-          class="alert alert-success alert-dismissible"
-        >
-          <button type="button" class="close" data-dismiss="alert">
-            &times;
-          </button>
-          <i class="fa fa-check fa-1x"></i>&nbsp; <strong>Success.</strong> A
-          new record has been created!
-        </div>
-        <!-- End of displaying alert success -->
-
-        <!-- Start of form -->
-        <form #validateForm="ngForm" (ngSubmit)="onSubmit()" method="POST">
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              placeholder="Enter first name"
-              #firstName="ngModel"
-              [(ngModel)]="employee.firstName"
-              name="firstName"
-              id="firstName"
-              required
-            />
-            <span
-              class="text-danger"
-              *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
-              >First name is required</span
-            >
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              placeholder="Enter last name"
-              #lastName="ngModel"
-              [(ngModel)]="employee.lastName"
-              name="lastName"
-              id="lastName"
-              required
-            />
-            <span
-              class="text-danger"
-              *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
-              >Last name is required</span
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              placeholder="Enter your phone number.ex. (_ _ _ )_ _ _ _ _ _ _"
-              #phone="ngModel"
-              [(ngModel)]="employee.phone"
-              name="phone"
-              id="phone"
-              maxlength="11"
-              required
-            />
-            <span
-              class="text-danger"
-              *ngIf="phone.invalid && (phone.dirty || phone.touched)"
-              >Phone number is required</span
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email address</label>
-
-            <input
-              type="email"
-              class="form-control form-control-lg"
-              placeholder="Enter email address"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-              id="email"
-              name="email"
-              [(ngModel)]="employee.email"
-              #email="ngModel"
-            />
-            <div
-              class="text-danger"
-              *ngIf="email.invalid && (email.dirty || email.touched)"
-            >
-              <span [hidden]="!emailref.errors?.pattern">
-                Invalid email address. Please enter valid email address
-              </span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1 class="text-primary">{{title}}</h1>
+                <hr />
+                <br />
+                <!-- Start of displaying alert success -->
+                <div *ngIf="showSuccessAlert" class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">
+                        &times;
+                    </button>
+                    <i class="fa fa-check fa-1x"></i>&nbsp; <strong>Success.</strong> A
+                    new record has been created!
+                </div>
+                <!-- End of displaying alert success -->
+                <!-- Start of form -->
+                <form #validateForm="ngForm" (ngSubmit)="onSubmit()" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Enter first name" #firstName="ngModel" [(ngModel)]="employee.firstName" name="firstName" id="firstName" required />
+                        <span class="text-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">First name is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Enter last name" #lastName="ngModel" [(ngModel)]="employee.lastName" name="lastName" id="lastName" required />
+                        <span class="text-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">Last name is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Enter your phone number.ex. (_ _ _ )_ _ _ _ _ _ _" #phone="ngModel" [(ngModel)]="employee.phone" name="phone" id="phone" maxlength="11" required />
+                        <span class="text-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">Phone number is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control form-control-lg" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email" [(ngModel)]="employee.email" #email="ngModel" />
+                        <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <span [hidden]="!emailref.errors?.pattern">
+                                Invalid email address. Please enter valid email address
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary text-uppercase mt-3" [disabled]="!validateForm.valid">
+                        Submit
+                    </button>
+                    <!-- (click)="successmsg()" -->
+                </form>
+                <!-- End of form -->
             </div>
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary text-uppercase mt-3"
-            [disabled]="!validateForm.valid"
-          >
-            Submit
-          </button>
-          <!-- (click)="successmsg()" -->
-        </form>
-
-        <!-- End of form -->
-      </div>
+        </div>
     </div>
-  </div>
 </section>
