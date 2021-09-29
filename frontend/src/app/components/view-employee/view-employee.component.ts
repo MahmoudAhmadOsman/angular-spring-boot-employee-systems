@@ -19,7 +19,7 @@ employee: Employee = new Employee();
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute) { }
 
  ngOnInit(): void {
-    //3. Then, get new emp. by id by using activated route
+    //3. Then, get new emp. by id using activated route
     this.id = this.route.snapshot.params['id'];
     this.employeeService.viewEmployee(this.id).subscribe(data =>{
       this.employee = data;
