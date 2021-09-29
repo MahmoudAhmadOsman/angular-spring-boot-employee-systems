@@ -12,7 +12,7 @@ export class ViewEmployeeComponent implements OnInit {
 
    title: string ="Employee Details";
   //1. @inject EmployeeService 
-//2. Create instantiate new employee object
+//2. instantiate new employee object
 id: number;
 employee: Employee = new Employee();
 
