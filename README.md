@@ -1,4 +1,4 @@
-#### Spring Boot & Angular 10 - RESTAPI
+#### Spring Boot & Angular 10 - RestAPI
 
  Built  with [Spring](https://spring.io/projects/spring-boot) Boot, JPA, Thymeleaf and MYSQL for backend database.
 #### Used Technologies :+1: 
